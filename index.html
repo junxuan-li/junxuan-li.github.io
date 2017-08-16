@@ -1,1 +1,262 @@
-My page
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Junxuan Li, CS master interested in Computer vision & Deep Learning</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le styles -->
+    <link href="./assets_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets_files/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="./assets_files/yangqing.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+    
+</head>
+
+<div class="visible-phone" id="blackBar">
+    <a href="#top">About</a>
+    <!--<a href="#research">Research</a>-->
+    <a href="#publications">Research</a>
+    <a href="#projects">Projects</a>
+
+    <!--<a href="#teaching">Teaching</a>-->
+    <a target="_blank"
+       href="./assets/CV_JunxuanLi.pdf">CV</a>
+</div>
+
+<body>
+
+<div class="container span3 hidden-phone">
+    <div id="floating_sidebar" class="span3">
+        <!-- We use a fancy nav bar if there is enough space -->
+        <!--<hr class="hidden-phone">-->
+        <br>
+        <ul class="nav nav-list bs-docs-sidenav hidden-phone">
+            <li><a href="#top">About</a></li>
+            <!--<li><a href="#research">Research</a></li>-->
+            <li><a href="#publications">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <!--<li><a href="#teaching">Teaching</a></li>-->
+            <li><a target="_blank"
+                   href="./assets/CV_JunxuanLi.pdf">CV</a>
+            </li>
+        </ul>
+        <hr class="hidden-phone">
+        <div class="text-center hidden-phone">
+            <img src="assets_files/me.jpg" alt="photo" class="logo-image">
+            <br><br>
+            u5990546 AT anu.edu.au <br>
+        </div>
+
+        <!-- Otherwise, we simply use a flat list of links -->
+
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="span9">
+            <br>
+            <h3>
+                Junxuan Li (李俊萱)
+            </h3>
+            <h5>
+                u5990546 AT anu.edu.au </a>
+            </h5>
+            <!-- Do I want to show a pic on the phone screen?
+            <div class="text-center visible-phone">
+                <img src="assets/img/Yihui.png" alt="photo" width="150px"/>
+            </div>
+            -->
+            <a class="visible-phone pull-left" href="http://daggerfs.com/index.html#">
+                <img class="media-object" src="assets_files/me.jpg" width="96px" style="margin: 0px 10px">
+            </a>
+            <p>
+                I'm a Computer Science 2rd-year master from <a
+                    href="https://en.wikipedia.org/wiki/Australian_National_University">The Australian National University</a>, with
+                my interest focus on Computer Vision and Deep Learning.
+            </p>
+            <p>
+                I'm currently a Computer Vision research intern at <a target="_blank"
+                                                                      href="https://www.data61.csiro.au/">Data61, CSIRO</a>,
+                supervised by <a target="_blank" href="http://users.cecs.anu.edu.au/~arobkell/">Antonio Robles-Kelly</a>  and <a target="_blank" href="http://www.cvl.iis.u-tokyo.ac.jp/~yousd/">Shaodi You</a>.
+                
+            <p>Here's my <a target="_blank"
+                            href="./assets/CV_JunxuanLi.pdf">CV</a>.
+                I have strong interest in research, planning to pursue a Ph.D.
+            </p>
+
+
+            <!--
+             *** Research ***
+            -->
+            <!--<h3>-->
+            <!--<a name="research"></a> Research-->
+            <!--</h3>-->
+            <!--<p>-->
+            <!--My current research topics include:-->
+            <!--</p><ul>-->
+            <!--<li> Learning better structures for image feature extraction.-->
+            <!--</li><li> Explaining human generalization behavior with visually grounded cogscience models.-->
+            <!--</li><li> Making large-scale vision feasible and affordable.-->
+            <!--</li></ul>-->
+            <!--<p></p>-->
+            <!--<p> (Most recent publications to be added) </p>-->
+
+
+            <!--
+             *** Publications ***
+            -->
+            <h3>
+                <a name="publications"></a> Research
+            </h3>
+
+        <div class="media">
+                <a class="pull-left">
+                    <img class="media-object" src="./assets_files/srnet.png" width="200px" height="200px">
+                </a>
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Stereo Super-resolution via a Deep Convolutional Network
+                     </strong><br>
+                        <strong>Junxuan Li</strong>, Shaodi You, Antonio Robles-Kelly, <i>Summited to DICTA, 2017</i>
+                        <a target="_blank"
+                           href="./assets/Stereo_Super_resolution_via_a_Deep_ConvolutionalNetwork.pdf">[pdf]</a>                        
+                    </p>
+                    <p class="abstract-text">
+                        In this paper, we present a method for stereo super-resolution which employs a deep network. The network is trained using the residual image so as to obtain a high resolution image from two, low resolution views. Our network is comprised by two deep sub-nets which share, at their output, a single convolutional layer. This last layer in the network delivers an estimate of the residual image which is then used, in combination with the left input frame of the stereo pair, to compute the super-resolved image at output. Each of these sub-networks is comprised by ten weight layers and, hence, allows our network to combine structural information in the image across image regions efficiently. Moreover, by learning the residual image, the network copes better with vanishing gradients and its devoid of gradient clipping operations. We illustrate the utility of our network for image-pair super-resolution and compare our network to its non-gradient trained analogue and alternatives elsewhere in the literature.
+                    </p>
+                </div>
+            </div>      
+
+        <div class="media">
+                <a class="pull-left">
+                    <img class="media-object" src="./assets_files/flownet.png" width="200px" height="200px">
+                </a>
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Secrets in Computing Optical Flow by Convolutional Networks
+                     </strong><br>
+                        <strong>Junxuan Li</strong>, <i> 2017</i>
+                        <a target="_blank"
+                           href="./assets/Secrets_in_Computing_Optical_Flow_by_Convolutional_Networks.pdf">[pdf]</a>                        
+                    </p>
+                    <p class="abstract-text">
+                        Convolutional neural networks(CNNs) have been widely used over many areas in compute vision. Especially in classification. Recently, FlowNet and several works on optical estimation using CNNs shows the potential ability of CNNs in doing per-pixel regression. We proposed several CNNs network architectures that can estimate optical flow, and fully unveiled the intrinsic different between these structures.
+                    </p>
+                </div>
+            </div>     
+
+
+            <h3>
+                <a name="projects"></a> Projects
+            </h3>
+
+        <div class="media">
+                <a class="pull-left">
+                    <img class="media-object" src="./assets_files/optship.png" width="200px" height="200px">
+                </a>
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             The interface development and application of OPT-Ship
+                     </strong><br>
+                        <strong>Junxuan Li</strong>, Supervisor: Prof. Decheng Wang, <i> 2016</i>                     
+                    </p>
+                    <p class="abstract-text">
+                        This is my undergraduate graduation project thesis. It implemented the interface of a software - OPTShip - by using C++ and Qt platform.
+                    </p>
+                </div>
+            </div>      
+
+        <div class="media">
+                <a class="pull-left">
+                    <img class="media-object" src="./assets_files/prp.png" width="200px" height="200px">
+                </a>
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Research of mass transit passenger flow distribution base on IC and GPS data
+                     </strong><br>
+                        <strong>Junxuan Li</strong>, Supervisor: Dr. Linjie Gao, <i> 2011</i>
+                    
+                    </p>
+                    <p class="abstract-text">
+                        This is the 26th Participation in Research Program(PRP). This project was aimed to analysis the data retrieved from IC and GPS and give an overall judgment to transit distribution. It was completed by using Python.
+                    </p>
+                </div>
+            </div>   
+
+            <!--<div class="media">-->
+            <!--<a class="pull-left" href="#top">-->
+            <!--<img class="media-object" src="./assets_files/decaf-features.png" width="96px" height="96px">-->
+            <!--</a>-->
+            <!--<div class="media-body">-->
+            <!--<p class="media-heading">-->
+            <!--<strong>DeCAF: A Deep Convolutional Activation Feature for Generic Visual Recognition</strong><br>-->
+            <!--J Donahue, Y Jia, O Vinyals, J Hoffman, N Zhang, E Tzeng, T Darrell. arXiv preprint.<br>-->
+            <!--<a target="_blank" href="http://arxiv.org/abs/1310.1531">[ArXiv Link]</a>-->
+            <!--<a target="_blank" href="http://decaf.berkeleyvision.org/">[Live Demo]</a>-->
+            <!--<a target="_blank" href="https://github.com/UCB-ICSI-Vision-Group/decaf-release/">[Software]</a>-->
+            <!--<a target="_blank" href="http://www.eecs.berkeley.edu/~jiayq/decaf_pretrained/">[Pretrained ImageNet Model]</a>-->
+            <!--</p>-->
+            <!--<p class="abstract-text">-->
+            <!--We evaluate whether features extracted from the activation of a deep convolutional network trained in a fully supervised fashion on a large, fixed set of object recognition tasks can be re-purposed to novel generic tasks. We also released the software and pre-trained network to do large-scale image classification.-->
+            <!--</p>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--
+             *** Projects ***
+            -->
+ 
+            <!-- Footer
+            ================================================== -->
+            
+                </div>
+                <div class="row">
+                    <div class="span12">
+                        <p>
+                            modified from <a target="_blank" href="http://yihui-he.github.io/">© Yihui He 2017</a>
+                        </p>
+                    </div>
+                </div>
+
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/application.js"></script>
+-->
