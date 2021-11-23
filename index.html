@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Junxuan Li, CS master, ANU College of Engineering & Computer Science</title>
+    <title>Junxuan Li, Ph.D., Australian National University</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Le styles -->
@@ -24,8 +24,9 @@
     <a href="#projects">Projects</a>
 
     <!--<a href="#teaching">Teaching</a>-->
+    <!--
     <a target="_blank"
-       href="./assets/CV_JunxuanLi.pdf">CV</a>
+       href="./assets/CV_JunxuanLi.pdf">CV</a>-->
 </div>
 
 <body>
@@ -41,9 +42,10 @@
             <li><a href="#publications">Publications</a></li>
             <li><a href="#projects">Projects</a></li>
             <!--<li><a href="#teaching">Teaching</a></li>-->
+            <!--
             <li><a target="_blank"
                    href="./assets/CV_JunxuanLi.pdf">CV</a>
-            </li>
+            </li>-->
         </ul>
         <hr class="hidden-phone">
         <div class="text-center hidden-phone">
@@ -65,7 +67,7 @@
         <div class="span9">
             <br>
             <h3>
-                Junxuan Li (李俊萱)
+                Junxuan Li <!--(李俊萱)-->
             </h3>
             <h5>
                 Junxuan.Li AT anu.edu.au </a>
@@ -79,15 +81,19 @@
                 <img class="media-object" src="assets_files/me.jpg" width="96px" style="margin: 0px 10px">
             </a>
             <p>
-                I'm a PhD student in <a href="https://en.wikipedia.org/wiki/Australian_National_University">The Australian National University</a>, with my interest focus on Computer Vision and Deep Learning, supervised by <a target="_blank" href="http://users.cecs.anu.edu.au/~hongdong/">Hongdong Li</a>, <a target="_blank" href="http://users.cecs.anu.edu.au/~arobkell/">Antonio Robles-Kelly</a>, <a target="_blank" href="http://users.cecs.anu.edu.au/~shaodi.you/">Shaodi You</a> and <a target="_blank" href="http://www-infobiz.ist.osaka-u.ac.jp/en/member/matsushita/">Yasuyuki Matsushita</a>. 
-            </p>
-            <p>
-                Previously, I received the Master degree in Australian National University, major in master of computing, in 2018. And B. Eng degree in <a href="https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University">Shanghai Jiaotong University</a> in 2016, under the supervision of <a href="https://www.researchgate.net/profile/De_Cheng_Wan"> Decheng Wang</a>.
+                I'm a PhD student in <a href="https://en.wikipedia.org/wiki/Australian_National_University">The Australian National University</a>, with my interest focus on Computer Vision and Deep Learning, supervised by <a target="_blank" href="http://users.cecs.anu.edu.au/~hongdong/">Hongdong Li</a> and <a target="_blank" href="http://www-infobiz.ist.osaka-u.ac.jp/en/member/matsushita/">Yasuyuki Matsushita</a>. Previously, I received the Master degree in Australian National University, major in master of computing, in 2018. And B. Eng degree in <a href="https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University">Shanghai Jiaotong University</a> in 2016.
             </p>
 
+            <p>
+                My main research topics are computer vision and machine learning. Specifically, I am currently doing researches on 3D object reconstruction, scene reconstruction, and novel view synthesis via deep learning approaches. I am also interested in some AR/VR related tasks, e.g., object insertion and relighting.
+            </p>
+
+
+            <!--
             <p>Here's my <a target="_blank"
                             href="./assets/CV_JunxuanLi.pdf">CV</a>.
             </p>
+            -->
 
 
             <!--
@@ -116,12 +122,29 @@
         
         <div class="media">
                 <a class="pull-left">
+                    <img class="media-object" src="./assets_files/selfcalibrating.png" width="200px">
+                </a>
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Self-calibrating Neural Photometric Stereo
+                     </strong><br>
+                        <strong>Junxuan Li</strong>, and Hongdong Li. <i>Submitted for review. 2021 Nov.</i>                               
+                    </p>
+                    <p class="abstract-text">
+<!-- This paper addresses a challenging Photometric-Stereo problem where the object to be reconstructed has unknown, non-Lambertian, and possibly spatially-varying surface materials. This problem becomes even more challenging when the shape of the object is highly complex so that shadows cast on the surface are inevitable.  To overcome these challenges, we propose a simple coordinate-based deep MLP (multilayer perceptron) neural network to parameterize both the unknown 3D shape and the unknown spatially-varying reflectance at every image pixel. This network is able to leverage the observed specularities and shadows on the surface, and recover both surface shape, normal and generic non-Lambertian reflectance via an inverse differentiable rendering process.  We explicitly predict cast shadows, mitigating possible artifacts on these shadowing regions, leading to higher estimation accuracy. Our framework is entirely self-supervised, in the sense that it requires neither ground truth shape nor known svBRDF. Tests on real-world images demonstrate that our method achieves state-of-the-art accuracy in both shape recovery and material estimation. Thanks to the small size of the MLP-net, our method is also an order of magnitude faster than previous competing deep-learning based photometric stereo methods. -->
+                    </p>
+                </div>
+            </div> 
+<hr>
+        <div class="media">
+                <a class="pull-left">
                     <img class="media-object" src="./assets_files/neural_ps.png" width="200px">
                 </a>
                 <div class="media-body">
                     <p class="media-heading">
                         <strong>
-                             Neural Photometric Stereo for Shape and Material Estimation
+                             Neural Reflectance for Shape Recovery with Shadow Handling
                      </strong><br>
                         <strong>Junxuan Li</strong>, and Hongdong Li. <i>Submitted for review. 2021 May.</i>                               
                     </p>
@@ -131,7 +154,7 @@
                 </div>
             </div> 
 
-
+<hr>
 
 
         <div class="media">
@@ -151,7 +174,7 @@
                 </div>
             </div> 
 
-
+<hr>
 
         <div class="media">
                 <a class="pull-left">
@@ -175,7 +198,7 @@ We propose a method for estimating high-definition spatially-varying lighting, r
                     </p>
                 </div>
             </div> 
-
+<hr>
         <div class="media">
                 <a class="pull-left">
                     <img class="media-object" src="./assets_files/cvpr19.png" width="200px" height="165px">
@@ -199,7 +222,7 @@ Photometric stereo estimates the surface normal given a set of images acquired u
                 </div>
             </div> 
 
-        
+<hr>
         <div class="media">
                 <a class="pull-left">
                     <img class="media-object" src="./assets_files/fftcnn.png" width="200px" height="165px">
@@ -222,7 +245,7 @@ Photometric stereo estimates the surface normal given a set of images acquired u
                     </p>
                 </div>
             </div> 
-
+<hr>
         <div class="media">
                 <a class="pull-left">
                     <img class="media-object" src="./assets_files/srnet.png" width="200px" height="200px">
@@ -242,7 +265,7 @@ Photometric stereo estimates the surface normal given a set of images acquired u
                 </div>
             </div>      
 
-
+<hr>
 
             <h3>
                 <a name="projects"></a> Projects
@@ -283,7 +306,7 @@ Photometric stereo estimates the surface normal given a set of images acquired u
                     </p>
                 </div>
             </div>   
-
+<hr>
             <!--<div class="media">-->
             <!--<a class="pull-left" href="#top">-->
             <!--<img class="media-object" src="./assets_files/decaf-features.png" width="96px" height="96px">-->
