@@ -21,6 +21,7 @@
     <a href="#top">About</a>
     <!--<a href="#publications">publications</a>-->
     <a href="#publications">Publications</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
 
     <!--<a href="#teaching">Teaching</a>-->
@@ -40,8 +41,8 @@
             <li><a href="#top">About</a></li>
             <!--<li><a href="#publications">Publications</a></li>-->
             <li><a href="#publications">Publications</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <!--<li><a href="#teaching">Teaching</a></li>-->
             <!--
             <li><a target="_blank"
                    href="./assets/CV_JunxuanLi.pdf">CV</a>
@@ -55,6 +56,7 @@
             <a href="https://scholar.google.com/citations?user=b2_zvDMAAAAJ&hl=en">Google Scholar</a> <br>
             <a href="https://github.com/junxuan-li">Github</a> <br>
             <a href="https://www.linkedin.com/in/junxuan-li-335421a6/">Linkedin</a> <br>
+            <a href="https://twitter.com/JunxuanL">Twitter</a> <br>
 
         </div>
 
@@ -91,7 +93,9 @@
             <p>
                 My main research topics are computer vision and machine learning. Specifically, I am currently doing researches on 3D object reconstruction, scene reconstruction, and novel view synthesis via deep learning approaches. I am also interested in some AR/VR related tasks, e.g., object insertion and relighting.
             </p>
-
+            <p>
+                I will be a Research Scientist Intern in Meta Reality Labs, Pittsburgh from Jun to Dec 2022. I will be working with <a href="https://stephenlombardi.github.io/">Stephen Lombardi</a> and <a href="http://www-scf.usc.edu/~saitos/">Shunsuke Saito</a> on the project of photorealistic telepresence.
+            </p>
 
             <!--
             <p>Here's my <a target="_blank"
@@ -117,13 +121,34 @@
             <!--<p> (Most recent publications to be added) </p>-->
 
 
+<hr>
             <!--
              *** Publications ***
             -->
             <h3>
                 <a name="publications"></a> Publications
             </h3>
-        
+
+
+        <div class="media">
+                <a class="pull-left">
+                    <img class="media-object" src="./assets_files/selfcalibrating.png" width="200px">
+                </a>
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Self-calibrating Photometric Stereo by Neural Inverse Rendering
+                     </strong><br>
+                        <strong>Junxuan Li</strong>, and Hongdong Li. <i>ECCV 2022.</i>
+                    </p>
+                    <p class="abstract-text">
+                        Introduced a self-supervised neural network for uncalibrated photometric stereo problem.<br>
+                        The object surface shape, and light sources are jointly estimated via the neural network in an unsupervised manner.
+                    </p>
+                </div>
+            </div>
+<hr>
+
         <div class="media">
                 <a class="pull-left">
                     <img class="media-object" src="./assets_files/neural_ps.png" width="200px">
@@ -133,12 +158,17 @@
                         <strong>
                              Neural Reflectance for Shape Recovery with Shadow Handling
                      </strong><br>
-                        <strong>Junxuan Li</strong>, and Hongdong Li. <i>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. (CVPR) 2022.</i>  <strong style="color:red">Oral</strong>
+                        <strong>Junxuan Li</strong>, and Hongdong Li. <i>CVPR 2022.</i>  <strong style="color:red">Oral presentation</strong>
                         <a target="_blank"
-                           href="https://arxiv.org/abs/2203.12909#:~:text=This%20paper%20aims%20at%20recovering,the%20task%20becomes%20very%20challenging.">[pdf]</a>                               
+                           href="https://arxiv.org/abs/2203.12909">[pdf]</a>
+                        <a target="_blank"
+                           href="https://github.com/junxuan-li/Neural-Reflectance-PS">[code]</a>
                     </p>
                     <p class="abstract-text">
-This paper addresses a challenging Photometric-Stereo problem where the object to be reconstructed has unknown, non-Lambertian, and possibly spatially-varying surface materials. We propose a simple coordinate-based deep MLP (multilayer perceptron) neural network to parameterize both the unknown 3D shape and the unknown spatially-varying reflectance at every image pixel. This network is able to leverage the observed specularities and shadows on the surface, and recover both surface shape, normal and generic non-Lambertian reflectance via an inverse differentiable rendering process.  We explicitly predict cast shadows, mitigating possible artifacts on these shadowing regions, leading to higher estimation accuracy. Our framework is entirely self-supervised, in the sense that it requires neither ground truth shape nor known svBRDF. Tests on real-world images demonstrate that our method achieves state-of-the-art accuracy in both shape recovery and material estimation. Our method is also an order of magnitude faster than previous competing deep-learning based photometric stereo methods.
+                        Formulated the shape estimation and material estimation in a self-supervised framework.<br>
+                        Explicitly predicted shadows to mitigate the errors.<br>
+                        Achieved the state-of-the-art performance in surface normal estimation and been an order of magnitude faster than previous methods.<br>
+                        The proposed neural representation of reflectance also presents higher quality in object relighting task than prior works.
                     </p>
                 </div>
             </div> 
@@ -155,7 +185,7 @@ This paper addresses a challenging Photometric-Stereo problem where the object t
                         <strong>
                              Lighting, Reflectance and Geometry Estimation from 360° Panoramic Stereo
                      </strong><br>
-                        <strong>Junxuan Li</strong>, Hongdong Li, and Yasuyuki Matsushita. <i>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. (CVPR) 2021.</i>
+                        <strong>Junxuan Li</strong>, Hongdong Li, and Yasuyuki Matsushita. <i>CVPR 2021.</i>
                         <a target="_blank"
                            href="./assets/Lighting Reflectance and Geometry Estimation from 360 Panoramic Stereo.pdf">[pdf]</a>
                         <a target="_blank"
@@ -164,7 +194,9 @@ This paper addresses a challenging Photometric-Stereo problem where the object t
                            href="https://github.com/junxuan-li/LRG_360Panoramic">[code]</a>                               
                     </p>
                     <p class="abstract-text">
-We propose a method for estimating high-definition spatially-varying lighting, reflectance, and geometry of a scene from 360° stereo images. Our model takes advantage of the 360° input to observe the entire scene with geometric detail, then jointly estimates the scene’s properties with physical constraints. We first reconstruct a near-field environment light for predicting the lighting at any 3D location within the scene. Then we present a deep learning model that leverages the stereo information to infer the reflectance and surface normal. Lastly, we incorporate the physical constraints between lighting and geometry to refine the reflectance of the scene. Both quantitative and qualitative experiments show that our method, benefiting from the 360° observation of the scene, outperforms prior state-of-the-art methods and enables more augmented reality applications such as mirror-objects insertion.
+                        Estimating high-definition spatially-varying lighting (environment map), reflectance, and geometry of a complex indoor scene from a pair of 360° images.<br>
+                        Outperformed prior state-of-the-art methods in light estimation (7dB better in PSNR) and geometry estimation.<br>
+                        Enabled many augmented reality applications such as mirror-objects insertion.
                     </p>
                 </div>
             </div> 
@@ -180,14 +212,15 @@ We propose a method for estimating high-definition spatially-varying lighting, r
                         <strong>
                              Learning to Minify Photometric Stereo
                      </strong><br>
-                        <strong>Junxuan Li</strong>, Antonio Robles-Kelly, Shaodi You, and Yasuyuki Matsushita. <i>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. (CVPR) 2019.</i>
+                        <strong>Junxuan Li</strong>, Antonio Robles-Kelly, Shaodi You, and Yasuyuki Matsushita. <i>CVPR 2019.</i>
                         <a target="_blank"
                            href="./assets/Learning to Minify Photometric Stereo.pdf">[pdf]</a>
                         <a target="_blank"
                            href="https://github.com/junxuan-li/Learning-to-Minify-Photometric-Stereo">[code]</a>    
                     </p>
                     <p class="abstract-text">
-Photometric stereo estimates the surface normal given a set of images acquired under different illumination conditions. To deal with diverse factors involved in the image formation process, recent photometric stereo methods demand a large number of images as input. We propose a method that can dramatically decrease the demands on the number of images by learning the most informative ones under different illumination conditions. To this end, we use a deep learning framework to automatically learn the critical illumination conditions required at input. Furthermore, we present an occlusion layer that can synthesize cast shadows, which effectively improves the estimation accuracy. We assess our method on challenging real-world conditions, where we outperform techniques elsewhere in the literature with a significantly reduced number of light conditions. 
+                        Dramatically decrease the demands on the photometric stereo problem by reducing the number of images at input.<br>
+                        Automatically learn the critical and informative illuminations required at input.
                     </p>
                 </div>
             </div> 
@@ -211,8 +244,9 @@ Photometric stereo estimates the surface normal given a set of images acquired u
                            href="https://github.com/junxuan-li/A-frequency-domain-neural-network-for-fast-image-super-resolution">[code]</a>                       
                     </p>
                     <p class="abstract-text">
-                        In this paper, we present a frequency domain neural network for image super-resolution. The network employs the convolution theorem so as to cast convolutions in the spatial domain as products in the frequency domain. Moreover, the non-linearity in deep nets, often achieved by a rectifier unit, is here cast as a convolution in the frequency domain. This not only yields a network which is very computationally efficient at testing but also one whose parameters can all be learnt accordingly. The network can be trained using back propagation and is devoid of complex numbers due to the use of the Hartley transform as an alternative to the Fourier transform. Moreover, the network is potentially applicable to other problems elsewhere in computer vision and image processing which are often cast in the frequency domain. We show results on super-resolution and compare against alternatives elsewhere in the literature. In our experiments, our network is one to two orders of magnitude faster than the alternatives with an imperceptible loss of performance.
-                    </p>
+                        A frequency domain neural network for image super-resolution.<br>
+                        Employs the convolution theorem so as to cast convolutions in the spatial domain as products in the frequency domain.<br>
+                        The network is very computationally efficient at testing, which is one to two orders of magnitude faster than the previous works.                    </p>
                 </div>
             </div> 
 <hr>
@@ -230,7 +264,8 @@ Photometric stereo estimates the surface normal given a set of images acquired u
                            href="./assets/Stereo_Super_resolution_via_a_Deep_ConvolutionalNetwork.pdf">[pdf]</a>                        
                     </p>
                     <p class="abstract-text">
-                        In this paper, we present a method for stereo super-resolution which employs a deep network. The network is trained using the residual image so as to obtain a high resolution image from two, low resolution views. Our network is comprised by two deep sub-nets which share, at their output, a single convolutional layer. This last layer in the network delivers an estimate of the residual image which is then used, in combination with the left input frame of the stereo pair, to compute the super-resolved image at output. Each of these sub-networks is comprised by ten weight layers and, hence, allows our network to combine structural information in the image across image regions efficiently. Moreover, by learning the residual image, the network copes better with vanishing gradients and its devoid of gradient clipping operations. We illustrate the utility of our network for image-pair super-resolution and compare our network to its non-gradient trained analogue and alternatives elsewhere in the literature.
+                        A deep network for images super-resolution with stereo images at input. The network is designed to allow combining structural information in the image across large regions efficiently.<br>
+                        By learning the residual image, the network copes better with vanishing gradients and its devoid of gradient clipping operations.
                     </p>
                 </div>
             </div>      
@@ -238,24 +273,6 @@ Photometric stereo estimates the surface normal given a set of images acquired u
 <hr>
 
 
-
-        <div class="media">
-                <a class="pull-left">
-                    <img class="media-object" src="./assets_files/selfcalibrating.png" width="200px">
-                </a>
-                <div class="media-body">
-                    <p class="media-heading">
-                        <strong>
-                             Self-calibrating Neural Photometric Stereo
-                     </strong><br>
-                        <strong>Junxuan Li</strong>, and Hongdong Li. <i>Submitted for review. 2021 Nov.</i>                               
-                    </p>
-                    <p class="abstract-text">
-<!-- This paper addresses a challenging Photometric-Stereo problem where the object to be reconstructed has unknown, non-Lambertian, and possibly spatially-varying surface materials. This problem becomes even more challenging when the shape of the object is highly complex so that shadows cast on the surface are inevitable.  To overcome these challenges, we propose a simple coordinate-based deep MLP (multilayer perceptron) neural network to parameterize both the unknown 3D shape and the unknown spatially-varying reflectance at every image pixel. This network is able to leverage the observed specularities and shadows on the surface, and recover both surface shape, normal and generic non-Lambertian reflectance via an inverse differentiable rendering process.  We explicitly predict cast shadows, mitigating possible artifacts on these shadowing regions, leading to higher estimation accuracy. Our framework is entirely self-supervised, in the sense that it requires neither ground truth shape nor known svBRDF. Tests on real-world images demonstrate that our method achieves state-of-the-art accuracy in both shape recovery and material estimation. Thanks to the small size of the MLP-net, our method is also an order of magnitude faster than previous competing deep-learning based photometric stereo methods. -->
-                    </p>
-                </div>
-            </div> 
-<hr>
 
         <div class="media">
                 <a class="pull-left">
@@ -275,7 +292,71 @@ Photometric stereo estimates the surface normal given a set of images acquired u
             </div> 
 
 <hr>
+            <h3>
+                <a name="experience"></a> Experience and Professional Activities
+            </h3>
 
+        <div class="media">
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Research Scientist Intern.
+                     </strong> Reality Labs, Meta (Facebook). <br>
+                          Pittsburgh, United States. <i>Jun. 2022 -- Dec. 2022</i>
+                    </p>
+                    <p class="abstract-text">
+                        Solve problems in enabling photorealistic telepresence, digital human reconstruction and AR/VR related tasks using Neural Rendering.
+                    </p>
+                </div>
+            </div>
+<hr>
+
+        <div class="media">
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Industrial Trainee.
+                     </strong> Data61, CSIRO.<br>
+                          Canberra, Australia. <i>Jul. 2016 -- Aug. 2018</i>
+                    </p>
+                    <p class="abstract-text">
+      Worked on computer vision. Finished several research projects during the period: including image super-resolution and optical flow estimation via deep learning.
+                    </p>
+                </div>
+            </div>
+<hr>
+
+        <div class="media">
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Teaching Assistant.
+                     </strong> Australian National University.<br>
+                          Canberra, Australia. <i>Sep. 2018 -- Present</i>
+                    </p>
+                    <p class="abstract-text">
+            Worked as the tutor of: COMP2400/6240 Relational Database 2018-S2, 2019-S2, 2020-S2, 2021-S2; ENGN4528/6528 Computer Vision 2019-S1; COMP1730/6730 Programming for Scientists 2019-S2; COMP4650/6490 Document Analysis 2019-S2.}
+                    </p>
+                </div>
+            </div>
+<hr>
+
+        <div class="media">
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Reviewer.
+                     </strong><br>
+                    </p>
+                    <p class="abstract-text">
+                        Served as the conference reviewer of CVPR, ECCV, ICCV, ICLR, NeurIPS, 3DV and IROS.<br>
+                        Served as the reviewer of multiple journals: TPAMI, IJCV, SIGGRAPH and RA-L.
+                    </p>
+                </div>
+            </div>
+
+
+<hr>
             <h3>
                 <a name="projects"></a> Projects
             </h3>
