@@ -94,7 +94,10 @@
                 My main research topics are computer vision and machine learning. Specifically, I am currently doing researches on 3D object reconstruction, scene reconstruction, and novel view synthesis via deep learning approaches. I am also interested in some AR/VR related tasks, e.g., object insertion and relighting.
             </p>
             <p>
-                I will be a Research Scientist Intern in Meta Reality Labs, Pittsburgh from Jun to Dec 2022. I will be working with <a href="https://stephenlombardi.github.io/">Stephen Lombardi</a> and <a href="http://www-scf.usc.edu/~saitos/">Shunsuke Saito</a> on the project of photorealistic telepresence.
+                I am a Research Scientist Intern in Meta Reality Labs, Pittsburgh from Jun to Dec 2022, working with
+                <a href="https://stephenlombardi.github.io/">Stephen Lombardi</a> and
+                <a href="http://www-scf.usc.edu/~saitos/">Shunsuke Saito</a>
+                on the project of Codec Avatars and photorealistic telepresence.
             </p>
 
             <!--
@@ -138,7 +141,7 @@
                           Pittsburgh, United States. <i>Jun. 2022 -- Dec. 2022</i>
                     </p>
                     <p class="abstract-text">
-                        Solve problems in enabling photorealistic telepresence, digital human reconstruction and AR/VR related tasks using Neural Rendering.
+                        Solve problems in enabling photorealistic telepresence, digital human reconstruction, Codec Avatars and AR/VR related tasks using Neural Rendering.
                     </p>
                 </div>
             </div>
@@ -242,6 +245,34 @@
 
         <div class="media">
                 <a class="pull-left">
+                    <img class="media-object" src="./assets_files/ACCV22.png" width="300px">
+                </a>
+                <div class="media-body">
+                    <p class="media-heading">
+                        <strong>
+                             Neural Plenoptic Sampling: Learning Light-field from Thousands of Imaginary Eyes
+                     </strong><br>
+                        <strong>Junxuan Li</strong>, Yujiao Shi, and Hongdong Li. <i>ACCV 2022.</i>
+                    </p>
+                    <p class="abstract-text">
+                        Proposed a neural representation for the plenoptic function, which describes light
+                        rays observed from any given position in every viewing direction.<br>
+                        Proposed proxy depth reconstruction and color-blending network for achieving well
+                        approximation on the complete plenoptic function. <br>
+                        The generated results are in high-quality with better PSNR than previous methods.
+                        The training and testing time of proposed method  is also more than 10 times faster
+                        than prior works.
+<!--        Keywords: Neural radiance field, novel view synthesis, scene reconstruction.-->
+<!-- The Plenoptic function describes the light rays observed from any given position in every viewing direction. It is often parameterized as a 5-D function L(x, y, z, theta, phi) for a static scene.  Capturing all the plenoptic functions in the space of interest is paramount for Image-Based Rendering (IBR) and Novel View Synthesis (NVS). It encodes a complete light-field (i.e., lumigraph) therefore allows one to freely roam in the space and view the scene from any location in any direction.  However, achieving this goal by conventional light-field capture technique is expensive, requiring densely sampling the ray space using arrays of cameras or lenses. This paper proposes a much simpler solution to address this challenge by using only a small number of sparsely configured camera views as input.  Specifically, we adopt a simple Multi-Layer Perceptron (MLP) network as a universal function approximator to learn the plenoptic function at every position in the space of interest. By placing virtual viewpoints (dubbed 'imaginary eyes') at thousands of randomly sampled locations and leveraging multi-view geometric relationship, we train the MLP to regress the plenoptic function for the space.  Our network is trained on a per-scene basis, and the training time is relatively short (in the order of tens of minutes). When the model is converged, we can freely render novel images. Extensive experiments demonstrate that our method well approximates the complete plenoptic function and generates high-quality results. -->
+                    </p>
+                </div>
+            </div>
+
+<hr>
+
+
+        <div class="media">
+                <a class="pull-left">
                     <img class="media-object" src="./assets_files/cvpr21.jpg" width="300px">
                 </a>
                 <div class="media-body">
@@ -336,26 +367,6 @@
 
 <hr>
 
-
-
-        <div class="media">
-                <a class="pull-left">
-                    <img class="media-object" src="./assets_files/neural_plenoptic.jpg" width="300px">
-                </a>
-                <div class="media-body">
-                    <p class="media-heading">
-                        <strong>
-                             Neural Plenoptic Sampling: Capture Light-field from Imaginary Eyes
-                     </strong><br>
-                        <strong>Junxuan Li</strong>, Yujiao Shi, and Hongdong Li. <i>Submitted for review. 2021 March.</i>                               
-                    </p>
-                    <p class="abstract-text">
-<!-- The Plenoptic function describes the light rays observed from any given position in every viewing direction. It is often parameterized as a 5-D function L(x, y, z, theta, phi) for a static scene.  Capturing all the plenoptic functions in the space of interest is paramount for Image-Based Rendering (IBR) and Novel View Synthesis (NVS). It encodes a complete light-field (i.e., lumigraph) therefore allows one to freely roam in the space and view the scene from any location in any direction.  However, achieving this goal by conventional light-field capture technique is expensive, requiring densely sampling the ray space using arrays of cameras or lenses. This paper proposes a much simpler solution to address this challenge by using only a small number of sparsely configured camera views as input.  Specifically, we adopt a simple Multi-Layer Perceptron (MLP) network as a universal function approximator to learn the plenoptic function at every position in the space of interest. By placing virtual viewpoints (dubbed 'imaginary eyes') at thousands of randomly sampled locations and leveraging multi-view geometric relationship, we train the MLP to regress the plenoptic function for the space.  Our network is trained on a per-scene basis, and the training time is relatively short (in the order of tens of minutes). When the model is converged, we can freely render novel images. Extensive experiments demonstrate that our method well approximates the complete plenoptic function and generates high-quality results. -->
-                    </p>
-                </div>
-            </div> 
-
-<hr>
 
 
             <h3>
