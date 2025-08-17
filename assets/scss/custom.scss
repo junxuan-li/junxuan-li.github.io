@@ -1,0 +1,96 @@
+// Override this file to add your own SCSS styling.
+
+$baseBlue: #173024;
+
+.navbar .navbar-nav .nav-link {
+  font-size: 1rem;
+}
+
+.dark a, .dark h3.article-title a:hover {
+  //color: #f76497;
+  color: #1565c0;
+}
+
+
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+  color: $baseBlue;
+}
+
+.experience-icon-image {
+  width: 80px;
+  max-height: 80px;
+  max-width: unset;
+}
+
+.home-prj-img-icon-wrap {
+  /*display: grid;
+  place-items: center;*/
+
+  .home-project-icon-image {
+    /*max-width: 150px !important;*/
+    margin-top: 0.5rem;
+
+  }
+}
+
+
+.home-section {
+  h1 {
+    color: $baseBlue;
+  }
+}
+
+
+.wg-project {
+
+  .pub-list-item {
+    padding: 1rem 0;
+  }
+  .media.stream-item .article-title {
+    color: $baseBlue;
+  }
+
+  .article-authors {
+    color: #000000;
+    font-size: 0.9rem;
+
+  }
+  .j-op {
+    color: red;
+    font-weight: bold;
+  }
+  .journal {
+    font-weight: bold;
+  }
+
+  .article-title {
+    color: $baseBlue;
+  }
+   .article-desc {
+     color: #333;
+     font-size: 0.8rem;
+   }
+}
+
+.home-pubs-section {
+  .pub-title {
+    font-weight: bold;
+  }
+}
+
+
+/* 768px: md 分界线 */
+@media (max-width: 768px) {
+
+  .wg-project {
+    .item-text-part {order: 2;}
+    .item-img-part {
+      order: 1;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+
+}

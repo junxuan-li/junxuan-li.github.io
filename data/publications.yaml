@@ -1,0 +1,309 @@
+pubs:
+
+  - images:
+    title: "HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars"
+    authors: "Byungjun Kim, Shunsuke Saito, Giljoo Nam, Tomas Simon, Jason Saragih, Hanbyul Joo, **Junxuan Li**"
+    journal: ""
+    journal_desc: "**ICCV 2025** (<span class='j-op'>Oral presentation</span>)"
+    links:
+      - name: Project
+        url: "https://bjkim95.github.io/haircup/"
+      - name: Paper
+        url: "https://arxiv.org/abs/2507.19481"
+    desc: |
+      A universal prior model, HairCUP, explicitly disentangles hair and face components to enable flexible hairstyle swapping and the creation of high-fidelity 3D head avatars from only a few images
+
+
+
+  - images:
+    title: "Relightable Full-body Gaussian Codec Avatars"
+    authors: "Shaofei Wang, Tomas Simon, Igor Santesteban, Timur Bagautdinov, **Junxuan Li**, Vasu Agrawal, Fabian Prada, Shoou-I Yu, Pace Nalbone, Matt Gramlich, Roman Lubachersky, Chenglei Wu, Javier Romero, Jason Saragih, Michael Zollhoefer, Andreas Geiger, Siyu Tang, Shunsuke Saito"
+    journal: ""
+    journal_desc: "ACM Transactions on Graphics (**SIGGRAPH 2025**)"
+    links:
+      - name: Project
+        url: "https://neuralbodies.github.io/RFGCA/"
+      - name: Paper
+        url: "https://arxiv.org/pdf/2501.14726"
+    desc: |
+      The first drivable, full-body avatar that can be realistically relighted is introduced, employing a new method to manage complex lighting effects on an articulated body.
+
+
+
+  - images:
+    title: "3DGH: 3D Head Generation with Composable Hair and Face"
+    authors: "Chengan He, **Junxuan Li**, Tobias Kirschstein, Artem Sevastopolsky, Shunsuke Saito, Qingyang Tan, Javier Romero, Chen Cao, Holly Rushmeier, Giljoo Nam"
+    journal: ""
+    journal_desc: "ACM Transactions on Graphics (**SIGGRAPH 2025**)"
+    links:
+      - name: Project
+        url: "https://c-he.github.io/projects/3dgh/"
+      - name: Paper
+        url: "https://arxiv.org/abs/2506.20875"
+    desc: |
+      A novel generative model, 3DGH, creates a wide variety of 3D heads by freely composing different hair and face components.
+
+
+
+  - images:
+    title: "FRESA: Feedforward Reconstruction of Personalized Skinned Avatars from Few Images"
+    authors: "Rong Wang, Fabian Prada, Ziyan Wang, Zhongshi Jiang, Chengxiang Yin, **Junxuan Li**, Shunsuke Saito, Igor Santesteban, Javier Romero, Rohan Joshi, Hongdong Li, Jason Saragih, Yaser Sheikh"
+    journal: "CVPR 2025"
+    journal_desc: ""
+    links:
+      - name: Full Text
+        url: "https://arxiv.org/pdf/2503.19207"
+      - name: Project (results)
+        url: "https://rongakowang.github.io/fresa/fresa.html"
+    desc: |
+      Personalized and animatable 3D avatars are reconstructed with a fast, feed-forward method from just a few images, removing the need for per-subject optimization.
+
+
+
+  - images:
+    title: "LUCAS: Layered Universal Codec Avatars"
+    authors: "Di Liu, Teng Deng, Giljoo Nam, Yu Rong, Stanislav Pidhorskyi, **Junxuan Li**, Jason Saragih, Dimitris N. Metaxas, Chen Cao"
+    journal: "CVPR 2025"
+    journal_desc: ""
+    links:
+      - name: Project
+        url: "https://lsn33096.github.io/LUCAS/"
+      - name: Paper
+        url: "https://arxiv.org/pdf/2502.19739"
+    desc: |
+      High-fidelity, real-time 3D avatars efficient enough for mobile devices are created using a layered model that separates the hair and face.
+
+
+
+
+  - images:
+    title: "Vid2Avatar-Pro: Authentic Avatar from Videos in the Wild via Universal Prior"
+    authors: "Chen Guo*, **Junxuan Li***, Yash Kant, Yaser Sheikh, Shunsuke Saito†, Chen Cao† (*† - equal contribution)"
+    journal: "CVPR 2025"
+    journal_desc: ""
+    links:
+      - name: Full Text
+        url: "https://arxiv.org/abs/2503.01610"
+      - name: Video
+        url: "https://www.youtube.com/watch?v=rVte3Kddh20&feature=youtu.be"
+      - name: Project (results)
+        url: "https://moygcc.github.io/vid2avatar-pro/"
+    desc: |
+      Authentic, animatable 3D avatars are generated from challenging videos captured "in the wild" by leveraging a universal prior model.
+
+
+
+
+
+
+  - images:
+      - url: "images/publications/p1.gif"
+        name:
+    title: "URAvatar: Universal Relightable Gaussian Codec Avatars"
+    authors: "**Junxuan Li**, Chen Cao, Gabriel Schwartz, Rawal Khirodkar, Christian Richardt, Tomas Simon, Yaser Sheikh, and Shunsuke Saito"
+    journal: "SIGGRAPH Asia 2024"
+    links:
+      - name: arXiv
+        url: "https://arxiv.org/abs/2410.24223"
+      - name: Project Page
+        url: "https://junxuan-li.github.io/urgca-website/"
+    desc: |
+      We present URAvatar. It is a high-fidelity Universal prior for Relightable Avatars. You can create URAvatar (Your Avatar) from a phone scan
+
+
+  - images:
+      - url: "images/publications/p2.gif"
+        name:
+    title: "Relightable Gaussian Codec Avatars"
+    authors: "Shunsuke Saito, Gabriel Schwartz, Tomas Simon, **Junxuan Li**, and Giljoo Nam"
+    journal: "CVPR 2024 <span class='j-op'>Oral presentation</span>"
+    links:
+      - name: arXiv
+        url: "https://arxiv.org/abs/2312.03704"
+      - name: Project Page
+        url: "https://shunsukesaito.github.io/rgca/"
+    desc: |
+      We build high-fidelity relightable & animatable head avatars with 3D-consistent sub-millimeter details such as hair strands and pores on dynamic face sequences.
+
+
+
+
+  - images:
+      - url: "images/publications/p3.gif"
+        name:
+    title: "MEGANE: Morphable Eyeglass and Avatar Network"
+    authors: "**Junxuan Li**, Shunsuke Saito, Tomas Simon, Stephen Lombardi, Hongdong Li, and Jason Saragih"
+    journal: "CVPR 2023"
+    links:
+      - name: arXiv
+        url: "https://arxiv.org/abs/2302.04868"
+      - name: Project Page
+        url: "https://junxuan-li.github.io/megane/"
+    desc: |
+      We propose a 3D compositional morphable model of eyeglasses that accurately incorporates high-fidelity geometric and photometric interaction effects.
+
+      We employ a hybrid representation that combines surface geometry and a volumetric representation to enable modification of geometry, lens insertion and frame deformation.
+
+      Our model is relightable under point lights and natural illumination, which can synthesize casting shadows between faces and glasses
+
+
+
+  - images:
+      - url: "images/publications/p4.gif"
+        name:
+    title: "In-the-wild Inverse Rendering with a Flashlight"
+    authors: "Ziang Cheng, **Junxuan Li**, Hongdong Li"
+    journal: "CVPR 2023"
+    links:
+      - name: arXiv
+        url: "https://arxiv.org/abs/2303.14190"
+      - name: Project Page
+        url: "https://junxuan-li.github.io/wildlight-website/"
+    desc: |
+      We propose a practical photometric solution for the in-the-wild inverse rendering under unknown ambient lighting.
+
+      We recovers scene geometry and reflectance using only multi-view images captured by a smartphone.
+
+      The key idea is to exploit smartphone's built-in flashlight as a minimally controlled light source, and decompose images into two photometric components: a static appearance corresponds to ambient flux, plus a dynamic reflection induced by the flashlight.
+
+
+
+  - images:
+      - url: "images/publications/p5-1.gif"
+        name:
+      - url: "images/publications/p5-2.gif"
+        name:
+      - url: "images/publications/p5-3.gif"
+        name:
+    title: "Self-calibrating Photometric Stereo by Neural Inverse Rendering"
+    authors: "**Junxuan Li**, and Hongdong Li"
+    journal: "ECCV 2022"
+    links:
+      - name: arXiv
+        url: "https://arxiv.org/abs/2207.07815"
+      - name: Project Page
+        url: "https://github.com/junxuan-li/SCPS-NIR"
+    desc: |
+      Introduced a self-supervised neural network for uncalibrated photometric stereo problem.
+
+      The object surface shape, and light sources are jointly estimated via the neural network in an unsupervised manner
+
+
+
+
+  - images:
+      - url: "images/publications/p6-1.gif"
+        name:
+      - url: "images/publications/p6-2.png"
+        name:
+    title: "Neural Reflectance for Shape Recovery with Shadow Handling"
+    authors: "**Junxuan Li**, and Hongdong Li"
+    journal: "CVPR 2022.  <span class='j-op'>Oral presentation</span>"
+    links:
+      - name: arXiv
+        url: "https://arxiv.org/abs/2203.12909"
+      - name: Project Page
+        url: "https://github.com/junxuan-li/Neural-Reflectance-PS"
+    desc: |
+      Formulated the shape estimation and material estimation in a self-supervised framework.  Explicitly predicted shadows to mitigate the errors.
+
+      Achieved the state-of-the-art performance in surface normal estimation and been an order of magnitude faster than previous methods.
+
+      The proposed neural representation of reflectance also presents higher quality in object relighting task than prior works.
+
+
+
+  - images:
+      - url: "images/publications/p7.png"
+        name:
+    title: "Neural Plenoptic Sampling: Learning Light-field from Thousands of Imaginary Eyes"
+    authors: "**Junxuan Li**, Yujiao Shi, and Hongdong Li"
+    journal: "ACCV 2022"
+    links:
+      - name: arXiv
+        url: "https://openaccess.thecvf.com/content/ACCV2022/papers/Li_Neural_Plenoptic_Sampling_Learning_Light-field_from_Thousands_of_Imaginary_Eyes_ACCV_2022_paper.pdf"
+    desc: |
+      Proposed a neural representation for the plenoptic function, which describes light rays observed from any given position in every viewing direction.
+
+      Proposed proxy depth reconstruction and color-blending network for achieving well approximation on the complete plenoptic function.
+
+      The generated results are in high-quality with better PSNR than previous methods. The training and testing time of proposed method is also more than 10 times faster than prior works.
+
+
+
+
+  - images:
+      - url: "images/publications/p8.jpg"
+        name:
+    title: "Lighting, Reflectance and Geometry Estimation from 360° Panoramic Stereo"
+    authors: "**Junxuan Li**, Hongdong Li, and Yasuyuki Matsushita"
+    journal: "CVPR 2021"
+    links:
+      - name: arXiv
+        url: "https://openaccess.thecvf.com/content/CVPR2021/papers/Li_Lighting_Reflectance_and_Geometry_Estimation_From_360deg_Panoramic_Stereo_CVPR_2021_paper.pdf"
+      - name: Code
+        url: "https://github.com/junxuan-li/LRG_360Panoramic"
+    desc: |
+
+
+
+
+  - images:
+      - url: "images/publications/p9-1.png"
+        name:
+      - url: "images/publications/p9-2.png"
+        name:
+    title: "Learning to Minify Photometric Stereo"
+    authors: "**Junxuan Li**, Antonio Robles-Kelly, Shaodi You, and Yasuyuki Matsushita"
+    journal: "CVPR 2019"
+    links:
+      - name: arXiv
+        url: "https://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Learning_to_Minify_Photometric_Stereo_CVPR_2019_paper.pdf"
+      - name: Code
+        url: "https://github.com/junxuan-li/Learning-to-Minify-Photometric-Stereo"
+    desc: |
+      Dramatically decrease the demands on the photometric stereo problem by reducing the number of images at input.
+
+      Automatically learn the critical and informative illuminations required at input.
+
+
+
+  - images:
+      - url: "images/publications/p10.png"
+        name:
+    title: "A Frequency Domain Neural Network for Fast Image Super-resolution"
+    authors: "**Junxuan Li**, Shaodi You, and Antonio Robles-Kelly"
+    journal: ""
+    journal_desc: "_Neural Networks (**IJCNN**), 2018 International Joint Conference on. IEEE, 2018. <span class='j-op'>Oral presentation</span>_"
+    links:
+      - name: arXiv
+        url: "https://arxiv.org/abs/1712.03037"
+      - name: Code
+        url: "https://github.com/junxuan-li/A-frequency-domain-neural-network-for-fast-image-super-resolution"
+    desc: |
+      A frequency domain neural network for image super-resolution.
+
+      Employs the convolution theorem so as to cast convolutions in the spatial domain as products in the frequency domain.
+
+      The network is very computationally efficient at testing, which is one to two orders of magnitude faster than the previous works.
+
+
+
+  - images:
+      - url: "images/publications/p11.png"
+        name:
+    title: "Stereo Super-resolution via a Deep Convolutional Network"
+    authors: "**Junxuan Li**, Shaodi You, and Antonio Robles-Kelly"
+    journal: ""
+    journal_desc: "_Digital Image Computing: Techniques and Applications (**DICTA**), 2017 International Conference on. IEEE, 2017_"
+    links:
+      - name: arXiv
+        url: "https://junxuan-li.github.io/assets/Stereo_Super_resolution_via_a_Deep_ConvolutionalNetwork.pdf"
+    desc: |
+      A deep network for images super-resolution with stereo images at input. The network is designed to allow combining structural information in the image across large regions efficiently.
+
+      By learning the residual image, the network copes better with vanishing gradients and its devoid of gradient clipping operations.
+
+
+
+

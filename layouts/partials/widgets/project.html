@@ -1,0 +1,56 @@
+{{/* Project / publication Widget */}}
+
+{{/* Initialise */}}
+{{ $ := .root }}
+{{ $st := .page }}
+{{ $publications := site.Data.publications.pubs }}
+
+
+<div class="col-12  col-lg-8 ">
+
+  {{ range $publications }}
+
+  <div class="row pub-list-item">
+    <div class="item-text-part col-12 {{if .images}} col-md-9 {{end}} ">
+
+      <div class="section-subheading article-title mb-0 mt-0">
+        {{ .title }}
+      </div>
+      <div class=" article-authors">
+        {{ .authors | markdownify}}.
+        {{with .journal}}<span class="journal"  >{{ . | markdownify}}</span>{{end}}
+        {{with .journal_desc}}{{ . | markdownify}}{{end}}
+
+      </div>
+      <div class="article-desc">
+        {{ .desc | markdownify}}
+      </div>
+
+
+      {{with .links}}
+      <div class="btn-links">
+        {{ range $idx, $item := . }}
+        <a class="btn btn-outline-primary btn-page-header btn-sm"
+           href="{{ $item.url }}">
+          {{ $item.name  | markdownify | emojify }}
+        </a>
+        {{end}}
+      </div>
+      {{end}}
+
+    </div>
+    <div class="item-img-part col-12 {{if .images}} col-md-3{{end}}">
+      {{ with .images }}
+        {{ range $idx, $item := . }}
+        <div><img src="{{ $item.url | relURL }}" class="home-project-icon-image" loading="lazy" /></div>
+        {{end}}
+
+      {{ end }}
+    </div>
+  </div>
+
+
+  {{ end }}
+
+
+</div>
