@@ -6,7 +6,7 @@ pubs:
     journal: ""
     journal_desc: "**ICCV 2025** (<span class='j-op'>Oral presentation</span>)"
     links:
-      - name: Project
+      - name: Project Page
         url: "https://bjkim95.github.io/haircup/"
       - name: Paper
         url: "https://arxiv.org/abs/2507.19481"
@@ -21,7 +21,7 @@ pubs:
     journal: ""
     journal_desc: "ACM Transactions on Graphics (**SIGGRAPH 2025**)"
     links:
-      - name: Project
+      - name: Project Page
         url: "https://neuralbodies.github.io/RFGCA/"
       - name: Paper
         url: "https://arxiv.org/pdf/2501.14726"
@@ -36,7 +36,7 @@ pubs:
     journal: ""
     journal_desc: "ACM Transactions on Graphics (**SIGGRAPH 2025**)"
     links:
-      - name: Project
+      - name: Project Page
         url: "https://c-he.github.io/projects/3dgh/"
       - name: Paper
         url: "https://arxiv.org/abs/2506.20875"
@@ -51,10 +51,10 @@ pubs:
     journal: "CVPR 2025"
     journal_desc: ""
     links:
-      - name: Full Text
-        url: "https://arxiv.org/pdf/2503.19207"
-      - name: Project (results)
+      - name: Project Page
         url: "https://rongakowang.github.io/fresa/fresa.html"
+      - name: Paper
+        url: "https://arxiv.org/pdf/2503.19207"
     desc: |
       Personalized and animatable 3D avatars are reconstructed with a fast, feed-forward method from just a few images, removing the need for per-subject optimization.
 
@@ -66,7 +66,7 @@ pubs:
     journal: "CVPR 2025"
     journal_desc: ""
     links:
-      - name: Project
+      - name: Project Page
         url: "https://lsn33096.github.io/LUCAS/"
       - name: Paper
         url: "https://arxiv.org/pdf/2502.19739"
@@ -82,12 +82,12 @@ pubs:
     journal: "CVPR 2025"
     journal_desc: ""
     links:
-      - name: Full Text
-        url: "https://arxiv.org/abs/2503.01610"
+      - name: Project Page
+        url: "https://moygcc.github.io/vid2avatar-pro/"
       - name: Video
         url: "https://www.youtube.com/watch?v=rVte3Kddh20&feature=youtu.be"
-      - name: Project (results)
-        url: "https://moygcc.github.io/vid2avatar-pro/"
+      - name: Paper
+        url: "https://arxiv.org/abs/2503.01610"
     desc: |
       Authentic, animatable 3D avatars are generated from challenging videos captured "in the wild" by leveraging a universal prior model.
 
@@ -103,10 +103,10 @@ pubs:
     authors: "**Junxuan Li**, Chen Cao, Gabriel Schwartz, Rawal Khirodkar, Christian Richardt, Tomas Simon, Yaser Sheikh, and Shunsuke Saito"
     journal: "SIGGRAPH Asia 2024"
     links:
-      - name: arXiv
-        url: "https://arxiv.org/abs/2410.24223"
       - name: Project Page
         url: "https://junxuan-li.github.io/urgca-website/"
+      - name: arXiv
+        url: "https://arxiv.org/abs/2410.24223"
     desc: |
       We present URAvatar. It is a high-fidelity Universal prior for Relightable Avatars. You can create URAvatar (Your Avatar) from a phone scan
 
@@ -118,10 +118,10 @@ pubs:
     authors: "Shunsuke Saito, Gabriel Schwartz, Tomas Simon, **Junxuan Li**, and Giljoo Nam"
     journal: "CVPR 2024 <span class='j-op'>Oral presentation</span>"
     links:
-      - name: arXiv
-        url: "https://arxiv.org/abs/2312.03704"
       - name: Project Page
         url: "https://shunsukesaito.github.io/rgca/"
+      - name: arXiv
+        url: "https://arxiv.org/abs/2312.03704"
     desc: |
       We build high-fidelity relightable & animatable head avatars with 3D-consistent sub-millimeter details such as hair strands and pores on dynamic face sequences.
 
@@ -135,10 +135,10 @@ pubs:
     authors: "**Junxuan Li**, Shunsuke Saito, Tomas Simon, Stephen Lombardi, Hongdong Li, and Jason Saragih"
     journal: "CVPR 2023"
     links:
-      - name: arXiv
-        url: "https://arxiv.org/abs/2302.04868"
       - name: Project Page
         url: "https://junxuan-li.github.io/megane/"
+      - name: arXiv
+        url: "https://arxiv.org/abs/2302.04868"
     desc: |
       We propose a 3D compositional morphable model of eyeglasses that accurately incorporates high-fidelity geometric and photometric interaction effects.
 
@@ -155,10 +155,10 @@ pubs:
     authors: "Ziang Cheng, **Junxuan Li**, Hongdong Li"
     journal: "CVPR 2023"
     links:
-      - name: arXiv
-        url: "https://arxiv.org/abs/2303.14190"
       - name: Project Page
         url: "https://junxuan-li.github.io/wildlight-website/"
+      - name: arXiv
+        url: "https://arxiv.org/abs/2303.14190"
     desc: |
       We propose a practical photometric solution for the in-the-wild inverse rendering under unknown ambient lighting.
 
@@ -179,10 +179,10 @@ pubs:
     authors: "**Junxuan Li**, and Hongdong Li"
     journal: "ECCV 2022"
     links:
-      - name: arXiv
-        url: "https://arxiv.org/abs/2207.07815"
       - name: Project Page
         url: "https://github.com/junxuan-li/SCPS-NIR"
+      - name: arXiv
+        url: "https://arxiv.org/abs/2207.07815"
     desc: |
       Introduced a self-supervised neural network for uncalibrated photometric stereo problem.
 
@@ -200,10 +200,10 @@ pubs:
     authors: "**Junxuan Li**, and Hongdong Li"
     journal: "CVPR 2022.  <span class='j-op'>Oral presentation</span>"
     links:
-      - name: arXiv
-        url: "https://arxiv.org/abs/2203.12909"
       - name: Project Page
         url: "https://github.com/junxuan-li/Neural-Reflectance-PS"
+      - name: arXiv
+        url: "https://arxiv.org/abs/2203.12909"
     desc: |
       Formulated the shape estimation and material estimation in a self-supervised framework.  Explicitly predicted shadows to mitigate the errors.
 
@@ -303,7 +303,3 @@ pubs:
       A deep network for images super-resolution with stereo images at input. The network is designed to allow combining structural information in the image across large regions efficiently.
 
       By learning the residual image, the network copes better with vanishing gradients and its devoid of gradient clipping operations.
-
-
-
-

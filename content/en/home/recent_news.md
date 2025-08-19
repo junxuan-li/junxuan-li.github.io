@@ -11,8 +11,8 @@ weight: 30
 
 title: News
 subtitle:
-# ex_link: '/news'  
-# ex_link_title: 'All news»'  
+# ex_link: '/news'
+# ex_link_title: 'All news»'
 
 
 design:
@@ -21,7 +21,14 @@ design:
   columns: '2'
 ---
 
-- Served as the conference reviewer of CVPR, ECCV, ICCV, ICLR, NeurIPS, 3DV and IROS.
+- One paper (Oral) is accepted by ICCV 2025.
 
-- Served as the reviewer of multiple journals: TPAMI, IJCV, SIGGRAPH and RA-L.
-  
+- Two papers are accepted by SIGGRAPH 2025.
+
+- Three papers are accepted by CVPR 2025.
+
+- One paper is accepted by SIGGRAPH Asia 2024.
+
+- One paper is accepted by CVPR 2024.
+
+- Two papers are accepted by CVPR 2023.
