@@ -46,6 +46,15 @@ $baseBlue: #173024;
   .pub-list-item {
     padding: 1rem 0;
   }
+  .pub-highlight {
+    background: #fdf8f3;
+    border: 1.5px solid #e0cdb8;
+    border-left: 5px solid #a67c52;
+    border-radius: 8px;
+    padding: 1.2rem !important;
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(166, 124, 82, 0.1);
+  }
   .media.stream-item .article-title {
     color: $baseBlue;
   }

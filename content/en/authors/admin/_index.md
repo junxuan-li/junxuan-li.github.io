@@ -65,6 +65,8 @@ title:
 
 ---
 
-I'm a Research Scientist at [Codec Avatars Lab, Meta](https://about.meta.com/realitylabs/codecavatars/) in Pittsburgh, working on building the next generation of photorealistic digital humans. My work spans the full stack — foundational avatar models, relighting, hair, faces, hands, full-body, eyeglasses, and more! I'm working toward a future where anyone can create a photorealistic digital twin of themselves from a casual phone capture — with realistic lighting, expressions, and full-body articulation.
+I'm a Research Scientist at [Codec Avatars Lab, Meta](https://about.meta.com/realitylabs/codecavatars/), building photorealistic digital humans — from foundational avatar models to relighting, hair, faces, hands, and full-body articulation. My goal is to let anyone create a lifelike digital twin from a casual phone capture.
 
-If you are interested in an internship with us, feel free to email me!
+I received my Ph.D. from the [Australian National University](https://en.wikipedia.org/wiki/Australian_National_University) (advised by [Hongdong Li](http://users.cecs.anu.edu.au/~hongdong/) and [Yasuyuki Matsushita](http://www-infobiz.ist.osaka-u.ac.jp/en/member/matsushita/)) and my B.Eng. from [Shanghai Jiao Tong University](https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University).
+
+Interested in interning with us? I'm always looking for motivated students working on 3D vision, neural rendering, or generative models — drop me an [email](mailto:junxuanli@meta.com)!
