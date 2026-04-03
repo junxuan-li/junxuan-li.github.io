@@ -59,6 +59,8 @@
       font-weight: 700;
       color: var(--text);
       letter-spacing: -0.3px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .navbar nav {
@@ -242,18 +244,17 @@
     /* ── News ── */
     .news-list { list-style: none; }
     .news-list li {
-      padding: 10px 0;
+      padding: 10px 0 10px 18px;
       font-size: 14px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
       border-bottom: 1px solid var(--border);
+      position: relative;
     }
     .news-list li:last-child { border-bottom: none; }
     .news-list li::before {
       content: "";
-      flex-shrink: 0;
-      margin-top: 7px;
+      position: absolute;
+      left: 0;
+      top: 17px;
       width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--accent);
@@ -482,8 +483,11 @@
     }
 
     @media (max-width: 560px) {
-      .navbar nav { gap: 2px; }
+      .navbar { padding: 0 16px; gap: 8px; }
+      .navbar .site-name { font-size: 18px; }
+      .navbar nav { gap: 0; }
       .navbar nav a { padding: 6px 8px; font-size: 12px; }
+      .page-container { padding: 24px 16px 64px; }
     }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -609,7 +613,7 @@
       <!-- Publications -->
       <section id="publications">
         <div class="section-header">
-          <h2>Selected Publications</h2>
+          <h2>Publications</h2>
         </div>
 
         <!-- LCA -->
@@ -625,6 +629,58 @@
                 <a href="https://arxiv.org/abs/2604.02320" target="_blank" rel="noopener">Paper</a>
               </div>
               <div class="pub-desc">LCA is a high-fidelity, full-body 3D avatar model that generalizes to world-scale populations via large-scale pre/post-training, achieving precise expressions, finger-level articulation, and emergent relightability.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vid2Avatar-Pro -->
+        <div class="pub highlight">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/vid2avatarpro.mp4" poster="images/vid2avatarpro-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>Vid2Avatar-Pro: Authentic Avatar from Videos in the Wild via Universal Prior</h3>
+              <div class="authors">Chen Guo*, <strong>Junxuan Li*</strong>, Yash Kant, Yaser Sheikh, Shunsuke Saito&dagger;, Chen Cao&dagger; (*&dagger; equal contribution)</div>
+              <div class="venue">CVPR 2025</div>
+              <div class="pub-links">
+                <a href="https://moygcc.github.io/vid2avatar-pro/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://www.youtube.com/watch?v=rVte3Kddh20&feature=youtu.be" target="_blank" rel="noopener">Video</a>
+                <a href="https://arxiv.org/abs/2503.01610" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">Authentic, animatable 3D avatars are generated from challenging videos captured "in the wild" by leveraging a universal prior model.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- URAvatar -->
+        <div class="pub highlight">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/p1.mp4" poster="images/p1-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>URAvatar: Universal Relightable Gaussian Codec Avatars</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, Chen Cao, Gabriel Schwartz, Rawal Khirodkar, Christian Richardt, Tomas Simon, Yaser Sheikh, and Shunsuke Saito</div>
+              <div class="venue">SIGGRAPH Asia 2024</div>
+              <div class="pub-links">
+                <a href="https://junxuan-li.github.io/urgca-website/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2410.24223" target="_blank" rel="noopener">arXiv</a>
+              </div>
+              <div class="pub-desc">We present URAvatar, a high-fidelity Universal prior for Relightable Avatars. You can create URAvatar (Your Avatar) from a phone scan.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RGCA -->
+        <div class="pub highlight">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/p2.mp4" poster="images/p2-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>Relightable Gaussian Codec Avatars</h3>
+              <div class="authors">Shunsuke Saito, Gabriel Schwartz, Tomas Simon, <strong>Junxuan Li</strong>, and Giljoo Nam</div>
+              <div class="venue">CVPR 2024 <span class="oral">Oral Presentation</span></div>
+              <div class="pub-links">
+                <a href="https://shunsukesaito.github.io/rgca/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2312.03704" target="_blank" rel="noopener">arXiv</a>
+              </div>
+              <div class="pub-desc">We build high-fidelity relightable &amp; animatable head avatars with 3D-consistent sub-millimeter details such as hair strands and pores on dynamic face sequences.</div>
             </div>
           </div>
         </div>
@@ -710,58 +766,6 @@
                 <a href="https://arxiv.org/pdf/2502.19739" target="_blank" rel="noopener">Paper</a>
               </div>
               <div class="pub-desc">High-fidelity, real-time 3D avatars efficient enough for mobile devices are created using a layered model that separates the hair and face.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vid2Avatar-Pro -->
-        <div class="pub highlight">
-          <div class="pub-inner">
-            <div class="pub-img"><video src="images/vid2avatarpro.mp4" poster="images/vid2avatarpro-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-            <div class="pub-body">
-              <h3>Vid2Avatar-Pro: Authentic Avatar from Videos in the Wild via Universal Prior</h3>
-              <div class="authors">Chen Guo*, <strong>Junxuan Li*</strong>, Yash Kant, Yaser Sheikh, Shunsuke Saito&dagger;, Chen Cao&dagger; (*&dagger; equal contribution)</div>
-              <div class="venue">CVPR 2025</div>
-              <div class="pub-links">
-                <a href="https://moygcc.github.io/vid2avatar-pro/" target="_blank" rel="noopener">Project Page</a>
-                <a href="https://www.youtube.com/watch?v=rVte3Kddh20&feature=youtu.be" target="_blank" rel="noopener">Video</a>
-                <a href="https://arxiv.org/abs/2503.01610" target="_blank" rel="noopener">Paper</a>
-              </div>
-              <div class="pub-desc">Authentic, animatable 3D avatars are generated from challenging videos captured "in the wild" by leveraging a universal prior model.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- URAvatar -->
-        <div class="pub highlight">
-          <div class="pub-inner">
-            <div class="pub-img"><video src="images/p1.mp4" poster="images/p1-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-            <div class="pub-body">
-              <h3>URAvatar: Universal Relightable Gaussian Codec Avatars</h3>
-              <div class="authors"><strong>Junxuan Li</strong>, Chen Cao, Gabriel Schwartz, Rawal Khirodkar, Christian Richardt, Tomas Simon, Yaser Sheikh, and Shunsuke Saito</div>
-              <div class="venue">SIGGRAPH Asia 2024</div>
-              <div class="pub-links">
-                <a href="https://junxuan-li.github.io/urgca-website/" target="_blank" rel="noopener">Project Page</a>
-                <a href="https://arxiv.org/abs/2410.24223" target="_blank" rel="noopener">arXiv</a>
-              </div>
-              <div class="pub-desc">We present URAvatar, a high-fidelity Universal prior for Relightable Avatars. You can create URAvatar (Your Avatar) from a phone scan.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- RGCA -->
-        <div class="pub">
-          <div class="pub-inner">
-            <div class="pub-img"><video src="images/p2.mp4" poster="images/p2-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-            <div class="pub-body">
-              <h3>Relightable Gaussian Codec Avatars</h3>
-              <div class="authors">Shunsuke Saito, Gabriel Schwartz, Tomas Simon, <strong>Junxuan Li</strong>, and Giljoo Nam</div>
-              <div class="venue">CVPR 2024 <span class="oral">Oral Presentation</span></div>
-              <div class="pub-links">
-                <a href="https://shunsukesaito.github.io/rgca/" target="_blank" rel="noopener">Project Page</a>
-                <a href="https://arxiv.org/abs/2312.03704" target="_blank" rel="noopener">arXiv</a>
-              </div>
-              <div class="pub-desc">We build high-fidelity relightable &amp; animatable head avatars with 3D-consistent sub-millimeter details such as hair strands and pores on dynamic face sequences.</div>
             </div>
           </div>
         </div>
