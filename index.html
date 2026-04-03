@@ -8,19 +8,19 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --accent: #2563eb;
-      --accent-light: #dbeafe;
-      --accent-dark: #1d4ed8;
-      --text: #1e293b;
-      --text-secondary: #64748b;
+      --accent: #b08d57;
+      --accent-light: #f5f0e8;
+      --accent-dark: #8a6d3b;
+      --text: #2d2d2d;
+      --text-secondary: #6b6b6b;
       --bg: #ffffff;
-      --bg-subtle: #f8fafc;
-      --border: #e2e8f0;
-      --sidebar-width: 320px;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.05);
-      --radius: 10px;
+      --bg-subtle: #faf9f7;
+      --bg-card: #f7f5f2;
+      --border: #e8e4de;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+      --radius: 12px;
     }
 
     html { scroll-behavior: smooth; }
@@ -28,8 +28,8 @@
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
-      background: var(--bg-subtle);
-      line-height: 1.65;
+      background: var(--bg);
+      line-height: 1.7;
       font-size: 15px;
       -webkit-font-smoothing: antialiased;
     }
@@ -37,215 +37,238 @@
     a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
     a:hover { color: var(--accent-dark); }
 
-    /* ── Sidebar ── */
-    .sidebar {
-      position: fixed;
-      top: 0; left: 0;
-      width: var(--sidebar-width);
-      height: 100vh;
-      padding: 40px 32px 32px;
-      background: var(--bg);
-      border-right: 1px solid var(--border);
+    /* ── Top Navbar ── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .navbar .site-name {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .navbar nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .navbar nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 6px 16px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: var(--text);
+    }
+    .navbar nav a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 16px;
+      right: 16px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 1px;
+    }
+
+    /* ── Page Container ── */
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 48px 80px;
+    }
+
+    /* ── Two-Column Layout ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── Left Column (Profile) ── */
+    .profile {
+      position: sticky;
+      top: 84px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      overflow-y: auto;
-      z-index: 10;
+      text-align: center;
     }
 
-    .avatar-wrapper {
-      position: relative;
+    .avatar-frame {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent);
       margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
     }
 
-    .avatar-wrapper::after {
-      content: "";
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #7c3aed);
-      z-index: -1;
-    }
-
-    .sidebar .avatar {
-      width: 160px; height: 160px;
-      border-radius: 50%;
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border: 4px solid var(--bg);
       display: block;
     }
 
-    .sidebar h1 {
-      font-size: 24px;
+    .profile h1 {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: 26px;
       font-weight: 700;
       margin-bottom: 6px;
       letter-spacing: -0.3px;
     }
 
-    .sidebar .role {
+    .profile .role {
       font-size: 14px;
       font-weight: 500;
       color: var(--accent);
-      text-align: center;
       margin-bottom: 4px;
     }
 
-    .sidebar .org {
+    .profile .org {
       font-size: 13px;
       color: var(--text-secondary);
-      text-align: center;
       margin-bottom: 20px;
-    }
-
-    .sidebar .interests {
-      font-size: 12px;
-      color: var(--text-secondary);
-      text-align: center;
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-
-    .interest-tag {
-      display: inline-block;
-      background: var(--accent-light);
-      color: var(--accent-dark);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      margin: 3px;
     }
 
     .social-links {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
       justify-content: center;
       margin-bottom: 28px;
     }
 
     .social-links a {
-      width: 38px; height: 38px;
+      width: 36px; height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background: var(--bg-subtle);
       color: var(--text-secondary);
+      border: 1px solid var(--border);
       transition: all 0.2s;
     }
     .social-links a:hover {
       background: var(--accent);
       color: #fff;
+      border-color: var(--accent);
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
 
     .social-links svg {
-      width: 18px; height: 18px;
+      width: 16px; height: 16px;
       fill: currentColor;
     }
 
-    .sidebar nav {
+    .research-interests {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 20px 24px;
       width: 100%;
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
-      margin-top: auto;
+      text-align: left;
     }
 
-    .sidebar nav a {
+    .research-interests h3 {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .interest-tags {
       display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      border-radius: 8px;
-      transition: all 0.15s;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    .sidebar nav a:hover {
-      color: var(--accent);
+
+    .interest-tag {
+      display: inline-block;
       background: var(--accent-light);
-    }
-    .sidebar nav a .nav-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--border);
-      transition: background 0.15s;
-    }
-    .sidebar nav a:hover .nav-dot { background: var(--accent); }
-
-    /* ── Main ── */
-    .main {
-      margin-left: var(--sidebar-width);
-      max-width: 880px;
-      padding: 40px 48px 80px;
+      color: var(--accent-dark);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
     }
 
-    section { margin-bottom: 52px; }
+    /* ── Right Column (Content) ── */
+    .content { min-width: 0; }
+
+    section { margin-bottom: 48px; }
 
     section h2 {
-      font-size: 22px;
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: 26px;
       font-weight: 700;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      margin-bottom: 20px;
       letter-spacing: -0.3px;
-    }
-
-    section h2::before {
-      content: "";
-      width: 4px;
-      height: 24px;
-      background: linear-gradient(180deg, var(--accent), #7c3aed);
-      border-radius: 2px;
+      color: var(--text);
     }
 
     /* ── About ── */
-    .about-card {
-      background: var(--bg);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
+    .about-text p {
+      max-width: 660px;
+      font-size: 15px;
+      line-height: 1.75;
     }
-    .about-card p { max-width: 660px; }
-    .about-card p + p { margin-top: 12px; }
+    .about-text p + p { margin-top: 14px; }
 
     /* ── News ── */
     .news-list { list-style: none; }
     .news-list li {
-      padding: 10px 16px;
+      padding: 10px 0;
       font-size: 14px;
-      border-radius: 8px;
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      transition: background 0.15s;
+      border-bottom: 1px solid var(--border);
     }
-    .news-list li:hover { background: var(--bg); }
+    .news-list li:last-child { border-bottom: none; }
     .news-list li::before {
       content: "";
       flex-shrink: 0;
       margin-top: 7px;
-      width: 7px; height: 7px;
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--accent);
     }
 
     /* ── Experience ── */
-    .exp-list { display: flex; flex-direction: column; gap: 16px; }
+    .exp-list { display: flex; flex-direction: column; gap: 14px; }
 
     .exp-card {
       display: flex;
       align-items: flex-start;
-      gap: 18px;
+      gap: 16px;
       background: var(--bg);
       border-radius: var(--radius);
-      padding: 22px 24px;
-      box-shadow: var(--shadow-sm);
+      padding: 20px 22px;
       border: 1px solid var(--border);
       transition: box-shadow 0.2s, transform 0.2s;
     }
@@ -255,8 +278,8 @@
     }
 
     .exp-logo {
-      width: 48px; height: 48px;
-      border-radius: 12px;
+      width: 44px; height: 44px;
+      border-radius: 10px;
       object-fit: cover;
       border: 1px solid var(--border);
       flex-shrink: 0;
@@ -278,14 +301,29 @@
     }
 
     /* ── Publications ── */
-    .pub {
+    .section-header {
       display: flex;
-      gap: 24px;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .section-header h2 { margin-bottom: 0; }
+
+    .view-all {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pub {
       background: var(--bg);
       border-radius: var(--radius);
       padding: 24px;
-      margin-bottom: 18px;
-      box-shadow: var(--shadow-sm);
+      margin-bottom: 16px;
       border: 1px solid var(--border);
       transition: box-shadow 0.2s, transform 0.2s;
     }
@@ -296,16 +334,21 @@
 
     .pub.highlight {
       border-left: 4px solid var(--accent);
-      background: linear-gradient(135deg, #f0f7ff 0%, #faf5ff 100%);
-      box-shadow: var(--shadow-md);
+      background: linear-gradient(135deg, var(--accent-light) 0%, #faf8f4 100%);
+      box-shadow: var(--shadow-sm);
     }
     .pub.highlight:hover {
       box-shadow: var(--shadow-lg);
     }
 
+    .pub-inner {
+      display: flex;
+      gap: 24px;
+    }
+
     .pub-img {
       flex-shrink: 0;
-      width: 260px;
+      width: 240px;
       display: flex;
       align-items: flex-start;
     }
@@ -332,7 +375,7 @@
       margin-bottom: 6px;
       line-height: 1.55;
     }
-    .pub-body .authors strong { color: var(--text); font-weight: 600; }
+    .pub-body .authors strong { color: var(--accent-dark); font-weight: 600; }
 
     .pub-body .venue {
       font-size: 13px;
@@ -369,7 +412,6 @@
     .pub-links a:hover {
       background: var(--accent);
       color: #fff;
-      box-shadow: var(--shadow-sm);
     }
 
     .pub-desc {
@@ -379,8 +421,8 @@
     }
 
     .pub-no-img {
-      width: 260px;
-      height: 130px;
+      width: 240px;
+      height: 120px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
@@ -395,8 +437,8 @@
     /* ── Scroll reveal ── */
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .reveal.visible {
       opacity: 1;
@@ -405,8 +447,8 @@
 
     /* ── Footer ── */
     .footer {
-      margin-left: var(--sidebar-width);
-      max-width: 880px;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0 48px 40px;
       text-align: center;
       font-size: 12px;
@@ -414,421 +456,483 @@
     }
 
     /* ── Responsive ── */
-    @media (max-width: 920px) {
-      .sidebar {
+    @media (max-width: 860px) {
+      .navbar { padding: 0 20px; }
+      .navbar .site-name { font-size: 18px; }
+      .navbar nav a { padding: 6px 10px; font-size: 13px; }
+
+      .page-container { padding: 32px 20px 64px; }
+
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .profile {
         position: relative;
-        width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        padding: 32px 24px 24px;
+        top: 0;
       }
-      .sidebar nav { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; }
-      .sidebar nav a { padding: 6px 12px; }
-      .main {
-        margin-left: 0;
-        padding: 32px 20px 64px;
-      }
-      .footer { margin-left: 0; padding: 0 20px 32px; }
-      .pub { flex-direction: column; }
+
+      .avatar-frame { width: 180px; height: 180px; }
+
+      .pub-inner { flex-direction: column; }
       .pub-img, .pub-no-img { width: 100%; max-width: 360px; }
+
+      .footer { padding: 0 20px 32px; }
+    }
+
+    @media (max-width: 560px) {
+      .navbar nav { gap: 2px; }
+      .navbar nav a { padding: 6px 8px; font-size: 12px; }
     }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- ════════════════ SIDEBAR ════════════════ -->
-<aside class="sidebar">
-  <div class="avatar-wrapper">
-    <img class="avatar" src="images/avatar.jpg" alt="Junxuan Li">
-  </div>
-  <h1>Junxuan Li</h1>
-  <div class="role">Research Scientist</div>
-  <div class="org">Codec Avatars Lab, Meta</div>
-
-  <div class="interests">
-    <span class="interest-tag">Photorealistic Humans in 3D</span>
-    <span class="interest-tag">Digital Avatars</span>
-  </div>
-
-  <div class="social-links">
-    <a href="mailto:junxuanli@meta.com" title="Email">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-    </a>
-    <a href="https://twitter.com/JunxuanL" title="Twitter" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.38 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.32 3.91A12.16 12.16 0 013.16 4.86a4.28 4.28 0 001.33 5.71 4.24 4.24 0 01-1.94-.54v.05a4.28 4.28 0 003.43 4.19 4.27 4.27 0 01-1.93.07 4.29 4.29 0 004 2.98A8.59 8.59 0 012 19.54a12.13 12.13 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.37-.01-.56A8.72 8.72 0 0024 5.06a8.57 8.57 0 01-2.54.7z"/></svg>
-    </a>
-    <a href="https://github.com/junxuan-li" title="GitHub" target="_blank" rel="noopener">
-      <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-    </a>
-    <a href="https://scholar.google.com/citations?user=b2_zvDMAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener">
-      <svg viewBox="0 0 512 512"><path d="M256 411.12L0 202.667 256 0l256 202.667z"/><path d="M256 411.12l-191.996-152.45V512L256 411.12z" fill-opacity=".6"/><path d="M256 411.12L447.996 258.67V512L256 411.12z" fill-opacity=".6"/><circle cx="256" cy="362" r="96"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/junxuan-li-335421a6/" title="LinkedIn" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-    </a>
-  </div>
-
+<!-- ════════════════ NAVBAR ════════════════ -->
+<header class="navbar">
+  <a href="#" class="site-name">Junxuan Li</a>
   <nav>
-    <a href="#about"><span class="nav-dot"></span>About</a>
-    <a href="#news"><span class="nav-dot"></span>News</a>
-    <a href="#experience"><span class="nav-dot"></span>Experience</a>
-    <a href="#publications"><span class="nav-dot"></span>Publications</a>
+    <a href="#about" class="active">About</a>
+    <a href="#news">News</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
   </nav>
-</aside>
+</header>
 
-<!-- ════════════════ MAIN CONTENT ════════════════ -->
-<main class="main">
+<!-- ════════════════ PAGE CONTAINER ════════════════ -->
+<div class="page-container">
+  <div class="two-col">
 
-  <!-- About -->
-  <section id="about">
-    <h2>About</h2>
-    <div class="about-card">
-      <p>
-        I'm a Research Scientist at <a href="https://about.meta.com/realitylabs/codecavatars/" target="_blank" rel="noopener">Codec Avatars Lab, Meta</a>, building photorealistic digital humans &mdash; from foundational avatar models to relighting, hair, faces, hands, and full-body articulation. My goal is to let anyone create a lifelike digital twin from a casual phone capture.
-      </p>
-      <p>
-        I received my Ph.D. from the <a href="https://en.wikipedia.org/wiki/Australian_National_University" target="_blank" rel="noopener">Australian National University</a> (advised by <a href="http://users.cecs.anu.edu.au/~hongdong/" target="_blank" rel="noopener">Hongdong Li</a> and <a href="http://www-infobiz.ist.osaka-u.ac.jp/en/member/matsushita/" target="_blank" rel="noopener">Yasuyuki Matsushita</a>) and my B.Eng. from <a href="https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University" target="_blank" rel="noopener">Shanghai Jiao Tong University</a>.
-      </p>
-      <p>Interested in interning with us? I'm always looking for motivated students working on 3D vision, neural rendering, or generative models &mdash; drop me an <a href="mailto:junxuanli@meta.com">email</a>!</p>
+    <!-- ── Left: Profile ── -->
+    <aside class="profile">
+      <div class="avatar-frame">
+        <img src="images/avatar.jpg" alt="Junxuan Li">
+      </div>
+      <h1>Junxuan Li</h1>
+      <div class="role">Research Scientist</div>
+      <div class="org">Codec Avatars Lab, Meta</div>
+
+      <div class="social-links">
+        <a href="mailto:junxuanli@meta.com" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <a href="https://twitter.com/JunxuanL" title="Twitter" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.38 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.32 3.91A12.16 12.16 0 013.16 4.86a4.28 4.28 0 001.33 5.71 4.24 4.24 0 01-1.94-.54v.05a4.28 4.28 0 003.43 4.19 4.27 4.27 0 01-1.93.07 4.29 4.29 0 004 2.98A8.59 8.59 0 012 19.54a12.13 12.13 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.37-.01-.56A8.72 8.72 0 0024 5.06a8.57 8.57 0 01-2.54.7z"/></svg>
+        </a>
+        <a href="https://github.com/junxuan-li" title="GitHub" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=b2_zvDMAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 512 512"><path d="M256 411.12L0 202.667 256 0l256 202.667z"/><path d="M256 411.12l-191.996-152.45V512L256 411.12z" fill-opacity=".6"/><path d="M256 411.12L447.996 258.67V512L256 411.12z" fill-opacity=".6"/><circle cx="256" cy="362" r="96"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/junxuan-li-335421a6/" title="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      </div>
+
+      <div class="research-interests">
+        <h3>Research Interests</h3>
+        <div class="interest-tags">
+          <span class="interest-tag">Generative Models</span>
+          <span class="interest-tag">3D Humans</span>
+          <span class="interest-tag">Digital Avatars</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── Right: Content ── -->
+    <div class="content">
+
+      <!-- About -->
+      <section id="about">
+        <h2>About</h2>
+        <div class="about-text">
+          <p>
+            I'm a Research Scientist at <a href="https://about.meta.com/realitylabs/codecavatars/" target="_blank" rel="noopener">Codec Avatars Lab, Meta</a>, building photorealistic digital humans &mdash; from foundational avatar models to relighting, hair, faces, hands, and full-body articulation. My goal is to let anyone create a lifelike digital twin from a casual phone capture.
+          </p>
+          <p>
+            I received my Ph.D. from the <a href="https://en.wikipedia.org/wiki/Australian_National_University" target="_blank" rel="noopener">Australian National University</a> (advised by <a href="http://users.cecs.anu.edu.au/~hongdong/" target="_blank" rel="noopener">Hongdong Li</a> and <a href="http://www-infobiz.ist.osaka-u.ac.jp/en/member/matsushita/" target="_blank" rel="noopener">Yasuyuki Matsushita</a>) and my B.Eng. from <a href="https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University" target="_blank" rel="noopener">Shanghai Jiao Tong University</a>.
+          </p>
+          <p>Interested in interning with us? I'm always looking for motivated students working on 3D vision, neural rendering, or generative models &mdash; drop me an <a href="mailto:junxuanli@meta.com">email</a>!</p>
+        </div>
+      </section>
+
+      <!-- News -->
+      <section id="news">
+        <h2>News</h2>
+        <ul class="news-list">
+          <li><span style="background:#dc2626;color:white;padding:1px 6px;border-radius:4px;font-size:0.75em;font-weight:600;margin-right:4px;">NEW</span> One paper accepted at <strong>CVPR 2026</strong> &mdash; <a href="https://junxuan-li.github.io/lca/">LCA</a>!</li>
+          <li>One paper accepted at <strong>ICCV 2025</strong> as <span class="oral">Oral Presentation</span>!</li>
+          <li>Two papers accepted at <strong>SIGGRAPH 2025</strong>!</li>
+          <li>Three papers accepted at <strong>CVPR 2025</strong> &mdash; <a href="https://moygcc.github.io/vid2avatar-pro/">Vid2Avatar-Pro</a>!</li>
+          <li>One paper accepted at <strong>SIGGRAPH Asia 2024</strong> &mdash; <a href="https://junxuan-li.github.io/urgca-website/">URAvatar</a>!</li>
+          <li>One paper accepted at <strong>CVPR 2024</strong> as <span class="oral">Oral Presentation</span>!</li>
+          <li>Two papers accepted at <strong>CVPR 2023</strong>!</li>
+        </ul>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="exp-list">
+          <div class="exp-card">
+            <img class="exp-logo" src="images/logo-meta.jpg" alt="Meta">
+            <div class="exp-body">
+              <h3>Research Scientist</h3>
+              <div class="exp-company">Codec Avatars Lab, Meta</div>
+              <div class="exp-meta">Pittsburgh, United States &middot; Jul 2023 &ndash; Present</div>
+            </div>
+          </div>
+          <div class="exp-card">
+            <img class="exp-logo" src="images/logo-tencent.jpeg" alt="Tencent">
+            <div class="exp-body">
+              <h3>Research Intern</h3>
+              <div class="exp-company">Tencent</div>
+              <div class="exp-meta">Canberra, Australia &middot; Feb 2023 &ndash; May 2023</div>
+            </div>
+          </div>
+          <div class="exp-card">
+            <img class="exp-logo" src="images/logo-meta.jpg" alt="Meta">
+            <div class="exp-body">
+              <h3>Research Scientist Intern</h3>
+              <div class="exp-company">Reality Labs Research, Meta</div>
+              <div class="exp-meta">Pittsburgh, United States &middot; Jun 2022 &ndash; Dec 2022</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications -->
+      <section id="publications">
+        <div class="section-header">
+          <h2>Selected Publications</h2>
+        </div>
+
+        <!-- LCA -->
+        <div class="pub highlight">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/lca.mp4" poster="images/lca-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>Large-scale Codec Avatars: The Unreasonable Effectiveness of Large-scale Avatar Pretraining</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, Rawal Khirodkar, et al.</div>
+              <div class="venue">CVPR 2026</div>
+              <div class="pub-links">
+                <a href="https://junxuan-li.github.io/lca/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2604.02320" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">LCA is a high-fidelity, full-body 3D avatar model that generalizes to world-scale populations via large-scale pre/post-training, achieving precise expressions, finger-level articulation, and emergent relightability.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HairCUP -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/haircup.mp4" poster="images/haircup-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars</h3>
+              <div class="authors">Byungjun Kim, Shunsuke Saito, Giljoo Nam, Tomas Simon, Jason Saragih, Hanbyul Joo, <strong>Junxuan Li</strong></div>
+              <div class="venue">ICCV 2025 <span class="oral">Oral Presentation</span></div>
+              <div class="pub-links">
+                <a href="https://bjkim95.github.io/haircup/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2507.19481" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">A universal prior model, HairCUP, explicitly disentangles hair and face components to enable flexible hairstyle swapping and the creation of high-fidelity 3D head avatars from only a few images.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RFGCA -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/rfgca.mp4" poster="images/rfgca-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>Relightable Full-body Gaussian Codec Avatars</h3>
+              <div class="authors">Shaofei Wang, Tomas Simon, Igor Santesteban, Timur Bagautdinov, <strong>Junxuan Li</strong>, Vasu Agrawal, Fabian Prada, Shoou-I Yu, Pace Nalbone, Matt Gramlich, Roman Lubachersky, Chenglei Wu, Javier Romero, Jason Saragih, Michael Zollhoefer, Andreas Geiger, Siyu Tang, Shunsuke Saito</div>
+              <div class="venue">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
+              <div class="pub-links">
+                <a href="https://neuralbodies.github.io/RFGCA/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/pdf/2501.14726" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">The first drivable, full-body avatar that can be realistically relighted is introduced, employing a new method to manage complex lighting effects on an articulated body.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3DGH -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><img src="images/3dgh.png" alt="3DGH" loading="lazy"></div>
+            <div class="pub-body">
+              <h3>3DGH: 3D Head Generation with Composable Hair and Face</h3>
+              <div class="authors">Chengan He, <strong>Junxuan Li</strong>, Tobias Kirschstein, Artem Sevastopolsky, Shunsuke Saito, Qingyang Tan, Javier Romero, Chen Cao, Holly Rushmeier, Giljoo Nam</div>
+              <div class="venue">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
+              <div class="pub-links">
+                <a href="https://c-he.github.io/projects/3dgh/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2506.20875" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">A novel generative model, 3DGH, creates a wide variety of 3D heads by freely composing different hair and face components.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FRESA -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/fresa.mp4" poster="images/fresa-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>FRESA: Feedforward Reconstruction of Personalized Skinned Avatars from Few Images</h3>
+              <div class="authors">Rong Wang, Fabian Prada, Ziyan Wang, Zhongshi Jiang, Chengxiang Yin, <strong>Junxuan Li</strong>, Shunsuke Saito, Igor Santesteban, Javier Romero, Rohan Joshi, Hongdong Li, Jason Saragih, Yaser Sheikh</div>
+              <div class="venue">CVPR 2025</div>
+              <div class="pub-links">
+                <a href="https://rongakowang.github.io/fresa/fresa.html" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/pdf/2503.19207" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">Personalized and animatable 3D avatars are reconstructed with a fast, feed-forward method from just a few images, removing the need for per-subject optimization.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LUCAS -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/lucas.mp4" poster="images/lucas-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>LUCAS: Layered Universal Codec Avatars</h3>
+              <div class="authors">Di Liu, Teng Deng, Giljoo Nam, Yu Rong, Stanislav Pidhorskyi, <strong>Junxuan Li</strong>, Jason Saragih, Dimitris N. Metaxas, Chen Cao</div>
+              <div class="venue">CVPR 2025</div>
+              <div class="pub-links">
+                <a href="https://lsn33096.github.io/LUCAS/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/pdf/2502.19739" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">High-fidelity, real-time 3D avatars efficient enough for mobile devices are created using a layered model that separates the hair and face.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vid2Avatar-Pro -->
+        <div class="pub highlight">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/vid2avatarpro.mp4" poster="images/vid2avatarpro-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>Vid2Avatar-Pro: Authentic Avatar from Videos in the Wild via Universal Prior</h3>
+              <div class="authors">Chen Guo*, <strong>Junxuan Li*</strong>, Yash Kant, Yaser Sheikh, Shunsuke Saito&dagger;, Chen Cao&dagger; (*&dagger; equal contribution)</div>
+              <div class="venue">CVPR 2025</div>
+              <div class="pub-links">
+                <a href="https://moygcc.github.io/vid2avatar-pro/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://www.youtube.com/watch?v=rVte3Kddh20&feature=youtu.be" target="_blank" rel="noopener">Video</a>
+                <a href="https://arxiv.org/abs/2503.01610" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">Authentic, animatable 3D avatars are generated from challenging videos captured "in the wild" by leveraging a universal prior model.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- URAvatar -->
+        <div class="pub highlight">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/p1.mp4" poster="images/p1-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>URAvatar: Universal Relightable Gaussian Codec Avatars</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, Chen Cao, Gabriel Schwartz, Rawal Khirodkar, Christian Richardt, Tomas Simon, Yaser Sheikh, and Shunsuke Saito</div>
+              <div class="venue">SIGGRAPH Asia 2024</div>
+              <div class="pub-links">
+                <a href="https://junxuan-li.github.io/urgca-website/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2410.24223" target="_blank" rel="noopener">arXiv</a>
+              </div>
+              <div class="pub-desc">We present URAvatar, a high-fidelity Universal prior for Relightable Avatars. You can create URAvatar (Your Avatar) from a phone scan.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RGCA -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/p2.mp4" poster="images/p2-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>Relightable Gaussian Codec Avatars</h3>
+              <div class="authors">Shunsuke Saito, Gabriel Schwartz, Tomas Simon, <strong>Junxuan Li</strong>, and Giljoo Nam</div>
+              <div class="venue">CVPR 2024 <span class="oral">Oral Presentation</span></div>
+              <div class="pub-links">
+                <a href="https://shunsukesaito.github.io/rgca/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2312.03704" target="_blank" rel="noopener">arXiv</a>
+              </div>
+              <div class="pub-desc">We build high-fidelity relightable &amp; animatable head avatars with 3D-consistent sub-millimeter details such as hair strands and pores on dynamic face sequences.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEGANE -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/p3.mp4" poster="images/p3-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>MEGANE: Morphable Eyeglass and Avatar Network</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, Shunsuke Saito, Tomas Simon, Stephen Lombardi, Hongdong Li, and Jason Saragih</div>
+              <div class="venue">CVPR 2023</div>
+              <div class="pub-links">
+                <a href="https://junxuan-li.github.io/megane/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2302.04868" target="_blank" rel="noopener">arXiv</a>
+              </div>
+              <div class="pub-desc">A 3D compositional morphable model of eyeglasses with a hybrid surface-volumetric representation, enabling geometry modification, lens insertion, frame deformation, and relightable rendering with realistic face-glasses shadow interactions.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WildLight -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/p4.mp4" poster="images/p4-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>In-the-wild Inverse Rendering with a Flashlight</h3>
+              <div class="authors">Ziang Cheng, <strong>Junxuan Li</strong>, Hongdong Li</div>
+              <div class="venue">CVPR 2023</div>
+              <div class="pub-links">
+                <a href="https://junxuan-li.github.io/wildlight-website/" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2303.14190" target="_blank" rel="noopener">arXiv</a>
+              </div>
+              <div class="pub-desc">A practical in-the-wild inverse rendering method that recovers scene geometry and reflectance from smartphone images by exploiting the built-in flashlight as a minimally controlled light source.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCPS-NIR -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/p5-1.mp4" poster="images/p5-1-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>Self-calibrating Photometric Stereo by Neural Inverse Rendering</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, and Hongdong Li</div>
+              <div class="venue">ECCV 2022</div>
+              <div class="pub-links">
+                <a href="https://github.com/junxuan-li/SCPS-NIR" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2207.07815" target="_blank" rel="noopener">arXiv</a>
+              </div>
+              <div class="pub-desc">A self-supervised neural network for uncalibrated photometric stereo that jointly estimates surface shape and light sources without supervision.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Neural Reflectance PS -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><video src="images/p6-1.mp4" poster="images/p6-1-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
+            <div class="pub-body">
+              <h3>Neural Reflectance for Shape Recovery with Shadow Handling</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, and Hongdong Li</div>
+              <div class="venue">CVPR 2022 <span class="oral">Oral Presentation</span></div>
+              <div class="pub-links">
+                <a href="https://github.com/junxuan-li/Neural-Reflectance-PS" target="_blank" rel="noopener">Project Page</a>
+                <a href="https://arxiv.org/abs/2203.12909" target="_blank" rel="noopener">arXiv</a>
+              </div>
+              <div class="pub-desc">Self-supervised shape and material estimation with explicit shadow prediction, achieving state-of-the-art surface normal accuracy an order of magnitude faster than prior methods.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Neural Plenoptic Sampling -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><img src="images/p7.png" alt="Neural Plenoptic Sampling" loading="lazy"></div>
+            <div class="pub-body">
+              <h3>Neural Plenoptic Sampling: Learning Light-field from Thousands of Imaginary Eyes</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, Yujiao Shi, and Hongdong Li</div>
+              <div class="venue">ACCV 2022</div>
+              <div class="pub-links">
+                <a href="https://openaccess.thecvf.com/content/ACCV2022/papers/Li_Neural_Plenoptic_Sampling_Learning_Light-field_from_Thousands_of_Imaginary_Eyes_ACCV_2022_paper.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">A neural plenoptic function representation with proxy depth and color-blending, achieving higher PSNR and over 10x faster training/testing than prior methods.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 360 Panoramic -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><img src="images/p8.jpg" alt="360 Panoramic Stereo" loading="lazy"></div>
+            <div class="pub-body">
+              <h3>Lighting, Reflectance and Geometry Estimation from 360&deg; Panoramic Stereo</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, Hongdong Li, and Yasuyuki Matsushita</div>
+              <div class="venue">CVPR 2021</div>
+              <div class="pub-links">
+                <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Li_Lighting_Reflectance_and_Geometry_Estimation_From_360deg_Panoramic_Stereo_CVPR_2021_paper.pdf" target="_blank" rel="noopener">Paper</a>
+                <a href="https://github.com/junxuan-li/LRG_360Panoramic" target="_blank" rel="noopener">Code</a>
+              </div>
+              <div class="pub-desc">Joint estimation of spatially-varying lighting, reflectance, and geometry from 360&deg; stereo images, enabling AR applications such as mirror-object insertion.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning to Minify -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><img src="images/p9-1.png" alt="Learning to Minify PS" loading="lazy"></div>
+            <div class="pub-body">
+              <h3>Learning to Minify Photometric Stereo</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, Antonio Robles-Kelly, Shaodi You, and Yasuyuki Matsushita</div>
+              <div class="venue">CVPR 2019</div>
+              <div class="pub-links">
+                <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Learning_to_Minify_Photometric_Stereo_CVPR_2019_paper.pdf" target="_blank" rel="noopener">Paper</a>
+                <a href="https://github.com/junxuan-li/Learning-to-Minify-Photometric-Stereo" target="_blank" rel="noopener">Code</a>
+              </div>
+              <div class="pub-desc">Dramatically decrease the demands on photometric stereo by reducing the number of images at input. Automatically learns the critical and informative illuminations required.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frequency Domain NN -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><img src="images/p10.png" alt="Frequency Domain SR" loading="lazy"></div>
+            <div class="pub-body">
+              <h3>A Frequency Domain Neural Network for Fast Image Super-resolution</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, Shaodi You, and Antonio Robles-Kelly</div>
+              <div class="venue">IJCNN 2018 <span class="oral">Oral Presentation</span></div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/1712.03037" target="_blank" rel="noopener">arXiv</a>
+                <a href="https://github.com/junxuan-li/A-frequency-domain-neural-network-for-fast-image-super-resolution" target="_blank" rel="noopener">Code</a>
+              </div>
+              <div class="pub-desc">A frequency domain neural network for image super-resolution that leverages the convolution theorem, achieving one to two orders of magnitude speedup over prior methods.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stereo SR -->
+        <div class="pub">
+          <div class="pub-inner">
+            <div class="pub-img"><img src="images/p11.png" alt="Stereo SR" loading="lazy"></div>
+            <div class="pub-body">
+              <h3>Stereo Super-resolution via a Deep Convolutional Network</h3>
+              <div class="authors"><strong>Junxuan Li</strong>, Shaodi You, and Antonio Robles-Kelly</div>
+              <div class="venue">DICTA 2017</div>
+              <div class="pub-links">
+                <a href="https://junxuan-li.github.io/assets/Stereo_Super_resolution_via_a_Deep_ConvolutionalNetwork.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+              <div class="pub-desc">A deep stereo super-resolution network that efficiently combines structural information across large regions via residual learning.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
     </div>
-  </section>
-
-  <!-- News -->
-  <section id="news">
-    <h2>News</h2>
-    <ul class="news-list">
-      <li>🎉 <span style="background:#dc2626;color:white;padding:1px 6px;border-radius:4px;font-size:0.75em;font-weight:600;margin-right:4px;">NEW</span> One paper accepted at <strong>CVPR 2026</strong> &mdash; <a href="https://junxuan-li.github.io/lca/">LCA</a>!</li>
-      <li>One paper accepted at <strong>ICCV 2025</strong> as <span class="oral">Oral Presentation</span>!</li>
-      <li>Two papers accepted at <strong>SIGGRAPH 2025</strong>!</li>
-      <li>Three papers accepted at <strong>CVPR 2025</strong> &mdash; <a href="https://moygcc.github.io/vid2avatar-pro/">Vid2Avatar-Pro</a>!</li>
-      <li>One paper accepted at <strong>SIGGRAPH Asia 2024</strong> &mdash; <a href="https://junxuan-li.github.io/urgca-website/">URAvatar</a>!</li>
-      <li>One paper accepted at <strong>CVPR 2024</strong> as <span class="oral">Oral Presentation</span>!</li>
-      <li>Two papers accepted at <strong>CVPR 2023</strong>!</li>
-    </ul>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="exp-list">
-      <div class="exp-card">
-        <img class="exp-logo" src="images/logo-meta.jpg" alt="Meta">
-        <div class="exp-body">
-          <h3>Research Scientist</h3>
-          <div class="exp-company">Codec Avatars Lab, Meta</div>
-          <div class="exp-meta">Pittsburgh, United States &middot; Jul 2023 &ndash; Present</div>
-        </div>
-      </div>
-      <div class="exp-card">
-        <img class="exp-logo" src="images/logo-tencent.jpeg" alt="Tencent">
-        <div class="exp-body">
-          <h3>Research Intern</h3>
-          <div class="exp-company">Tencent</div>
-          <div class="exp-meta">Canberra, Australia &middot; Feb 2023 &ndash; May 2023</div>
-        </div>
-      </div>
-      <div class="exp-card">
-        <img class="exp-logo" src="images/logo-meta.jpg" alt="Meta">
-        <div class="exp-body">
-          <h3>Research Scientist Intern</h3>
-          <div class="exp-company">Reality Labs Research, Meta</div>
-          <div class="exp-meta">Pittsburgh, United States &middot; Jun 2022 &ndash; Dec 2022</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Publications -->
-  <section id="publications">
-    <h2>Publications</h2>
-
-    <!-- LCA -->
-    <div class="pub highlight">
-      <div class="pub-img"><video src="images/lca.mp4" poster="images/lca-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>Large-scale Codec Avatars: The Unreasonable Effectiveness of Large-scale Avatar Pretraining</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, Rawal Khirodkar, et al.</div>
-        <div class="venue">CVPR 2026</div>
-        <div class="pub-links">
-          <a href="https://junxuan-li.github.io/lca/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/abs/2604.02320" target="_blank" rel="noopener">Paper</a>
-        </div>
-        <div class="pub-desc">LCA is a high-fidelity, full-body 3D avatar model that generalizes to world-scale populations via large-scale pre/post-training, achieving precise expressions, finger-level articulation, and emergent relightability.</div>
-      </div>
-    </div>
-
-    <!-- HairCUP -->
-    <div class="pub">
-      <div class="pub-img"><video src="images/haircup.mp4" poster="images/haircup-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars</h3>
-        <div class="authors">Byungjun Kim, Shunsuke Saito, Giljoo Nam, Tomas Simon, Jason Saragih, Hanbyul Joo, <strong>Junxuan Li</strong></div>
-        <div class="venue">ICCV 2025 <span class="oral">Oral Presentation</span></div>
-        <div class="pub-links">
-          <a href="https://bjkim95.github.io/haircup/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/abs/2507.19481" target="_blank" rel="noopener">Paper</a>
-        </div>
-        <div class="pub-desc">A universal prior model, HairCUP, explicitly disentangles hair and face components to enable flexible hairstyle swapping and the creation of high-fidelity 3D head avatars from only a few images.</div>
-      </div>
-    </div>
-
-    <!-- RFGCA -->
-    <div class="pub">
-      <div class="pub-img"><video src="images/rfgca.mp4" poster="images/rfgca-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>Relightable Full-body Gaussian Codec Avatars</h3>
-        <div class="authors">Shaofei Wang, Tomas Simon, Igor Santesteban, Timur Bagautdinov, <strong>Junxuan Li</strong>, Vasu Agrawal, Fabian Prada, Shoou-I Yu, Pace Nalbone, Matt Gramlich, Roman Lubachersky, Chenglei Wu, Javier Romero, Jason Saragih, Michael Zollhoefer, Andreas Geiger, Siyu Tang, Shunsuke Saito</div>
-        <div class="venue">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
-        <div class="pub-links">
-          <a href="https://neuralbodies.github.io/RFGCA/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/pdf/2501.14726" target="_blank" rel="noopener">Paper</a>
-        </div>
-        <div class="pub-desc">The first drivable, full-body avatar that can be realistically relighted is introduced, employing a new method to manage complex lighting effects on an articulated body.</div>
-      </div>
-    </div>
-
-    <!-- 3DGH -->
-    <div class="pub">
-      <div class="pub-img"><img src="images/3dgh.png" alt="3DGH" loading="lazy"></div>
-      <div class="pub-body">
-        <h3>3DGH: 3D Head Generation with Composable Hair and Face</h3>
-        <div class="authors">Chengan He, <strong>Junxuan Li</strong>, Tobias Kirschstein, Artem Sevastopolsky, Shunsuke Saito, Qingyang Tan, Javier Romero, Chen Cao, Holly Rushmeier, Giljoo Nam</div>
-        <div class="venue">ACM Transactions on Graphics (SIGGRAPH 2025)</div>
-        <div class="pub-links">
-          <a href="https://c-he.github.io/projects/3dgh/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/abs/2506.20875" target="_blank" rel="noopener">Paper</a>
-        </div>
-        <div class="pub-desc">A novel generative model, 3DGH, creates a wide variety of 3D heads by freely composing different hair and face components.</div>
-      </div>
-    </div>
-
-    <!-- FRESA -->
-    <div class="pub">
-      <div class="pub-img"><video src="images/fresa.mp4" poster="images/fresa-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>FRESA: Feedforward Reconstruction of Personalized Skinned Avatars from Few Images</h3>
-        <div class="authors">Rong Wang, Fabian Prada, Ziyan Wang, Zhongshi Jiang, Chengxiang Yin, <strong>Junxuan Li</strong>, Shunsuke Saito, Igor Santesteban, Javier Romero, Rohan Joshi, Hongdong Li, Jason Saragih, Yaser Sheikh</div>
-        <div class="venue">CVPR 2025</div>
-        <div class="pub-links">
-          <a href="https://rongakowang.github.io/fresa/fresa.html" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/pdf/2503.19207" target="_blank" rel="noopener">Paper</a>
-        </div>
-        <div class="pub-desc">Personalized and animatable 3D avatars are reconstructed with a fast, feed-forward method from just a few images, removing the need for per-subject optimization.</div>
-      </div>
-    </div>
-
-    <!-- LUCAS -->
-    <div class="pub">
-      <div class="pub-img"><video src="images/lucas.mp4" poster="images/lucas-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>LUCAS: Layered Universal Codec Avatars</h3>
-        <div class="authors">Di Liu, Teng Deng, Giljoo Nam, Yu Rong, Stanislav Pidhorskyi, <strong>Junxuan Li</strong>, Jason Saragih, Dimitris N. Metaxas, Chen Cao</div>
-        <div class="venue">CVPR 2025</div>
-        <div class="pub-links">
-          <a href="https://lsn33096.github.io/LUCAS/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/pdf/2502.19739" target="_blank" rel="noopener">Paper</a>
-        </div>
-        <div class="pub-desc">High-fidelity, real-time 3D avatars efficient enough for mobile devices are created using a layered model that separates the hair and face.</div>
-      </div>
-    </div>
-
-    <!-- Vid2Avatar-Pro -->
-    <div class="pub highlight">
-      <div class="pub-img"><video src="images/vid2avatarpro.mp4" poster="images/vid2avatarpro-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>Vid2Avatar-Pro: Authentic Avatar from Videos in the Wild via Universal Prior</h3>
-        <div class="authors">Chen Guo*, <strong>Junxuan Li*</strong>, Yash Kant, Yaser Sheikh, Shunsuke Saito&dagger;, Chen Cao&dagger; (*&dagger; equal contribution)</div>
-        <div class="venue">CVPR 2025</div>
-        <div class="pub-links">
-          <a href="https://moygcc.github.io/vid2avatar-pro/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://www.youtube.com/watch?v=rVte3Kddh20&feature=youtu.be" target="_blank" rel="noopener">Video</a>
-          <a href="https://arxiv.org/abs/2503.01610" target="_blank" rel="noopener">Paper</a>
-        </div>
-        <div class="pub-desc">Authentic, animatable 3D avatars are generated from challenging videos captured "in the wild" by leveraging a universal prior model.</div>
-      </div>
-    </div>
-
-    <!-- URAvatar -->
-    <div class="pub highlight">
-      <div class="pub-img"><video src="images/p1.mp4" poster="images/p1-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>URAvatar: Universal Relightable Gaussian Codec Avatars</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, Chen Cao, Gabriel Schwartz, Rawal Khirodkar, Christian Richardt, Tomas Simon, Yaser Sheikh, and Shunsuke Saito</div>
-        <div class="venue">SIGGRAPH Asia 2024</div>
-        <div class="pub-links">
-          <a href="https://junxuan-li.github.io/urgca-website/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/abs/2410.24223" target="_blank" rel="noopener">arXiv</a>
-        </div>
-        <div class="pub-desc">We present URAvatar, a high-fidelity Universal prior for Relightable Avatars. You can create URAvatar (Your Avatar) from a phone scan.</div>
-      </div>
-    </div>
-
-    <!-- RGCA -->
-    <div class="pub">
-      <div class="pub-img"><video src="images/p2.mp4" poster="images/p2-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>Relightable Gaussian Codec Avatars</h3>
-        <div class="authors">Shunsuke Saito, Gabriel Schwartz, Tomas Simon, <strong>Junxuan Li</strong>, and Giljoo Nam</div>
-        <div class="venue">CVPR 2024 <span class="oral">Oral Presentation</span></div>
-        <div class="pub-links">
-          <a href="https://shunsukesaito.github.io/rgca/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/abs/2312.03704" target="_blank" rel="noopener">arXiv</a>
-        </div>
-        <div class="pub-desc">We build high-fidelity relightable &amp; animatable head avatars with 3D-consistent sub-millimeter details such as hair strands and pores on dynamic face sequences.</div>
-      </div>
-    </div>
-
-    <!-- MEGANE -->
-    <div class="pub">
-      <div class="pub-img"><video src="images/p3.mp4" poster="images/p3-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>MEGANE: Morphable Eyeglass and Avatar Network</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, Shunsuke Saito, Tomas Simon, Stephen Lombardi, Hongdong Li, and Jason Saragih</div>
-        <div class="venue">CVPR 2023</div>
-        <div class="pub-links">
-          <a href="https://junxuan-li.github.io/megane/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/abs/2302.04868" target="_blank" rel="noopener">arXiv</a>
-        </div>
-        <div class="pub-desc">A 3D compositional morphable model of eyeglasses with a hybrid surface-volumetric representation, enabling geometry modification, lens insertion, frame deformation, and relightable rendering with realistic face-glasses shadow interactions.</div>
-      </div>
-    </div>
-
-    <!-- WildLight -->
-    <div class="pub">
-      <div class="pub-img"><video src="images/p4.mp4" poster="images/p4-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>In-the-wild Inverse Rendering with a Flashlight</h3>
-        <div class="authors">Ziang Cheng, <strong>Junxuan Li</strong>, Hongdong Li</div>
-        <div class="venue">CVPR 2023</div>
-        <div class="pub-links">
-          <a href="https://junxuan-li.github.io/wildlight-website/" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/abs/2303.14190" target="_blank" rel="noopener">arXiv</a>
-        </div>
-        <div class="pub-desc">A practical in-the-wild inverse rendering method that recovers scene geometry and reflectance from smartphone images by exploiting the built-in flashlight as a minimally controlled light source.</div>
-      </div>
-    </div>
-
-    <!-- SCPS-NIR -->
-    <div class="pub">
-      <div class="pub-img"><video src="images/p5-1.mp4" poster="images/p5-1-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>Self-calibrating Photometric Stereo by Neural Inverse Rendering</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, and Hongdong Li</div>
-        <div class="venue">ECCV 2022</div>
-        <div class="pub-links">
-          <a href="https://github.com/junxuan-li/SCPS-NIR" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/abs/2207.07815" target="_blank" rel="noopener">arXiv</a>
-        </div>
-        <div class="pub-desc">A self-supervised neural network for uncalibrated photometric stereo that jointly estimates surface shape and light sources without supervision.</div>
-      </div>
-    </div>
-
-    <!-- Neural Reflectance PS -->
-    <div class="pub">
-      <div class="pub-img"><video src="images/p6-1.mp4" poster="images/p6-1-poster.jpg" preload="none" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page"></video></div>
-      <div class="pub-body">
-        <h3>Neural Reflectance for Shape Recovery with Shadow Handling</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, and Hongdong Li</div>
-        <div class="venue">CVPR 2022 <span class="oral">Oral Presentation</span></div>
-        <div class="pub-links">
-          <a href="https://github.com/junxuan-li/Neural-Reflectance-PS" target="_blank" rel="noopener">Project Page</a>
-          <a href="https://arxiv.org/abs/2203.12909" target="_blank" rel="noopener">arXiv</a>
-        </div>
-        <div class="pub-desc">Self-supervised shape and material estimation with explicit shadow prediction, achieving state-of-the-art surface normal accuracy an order of magnitude faster than prior methods.</div>
-      </div>
-    </div>
-
-    <!-- Neural Plenoptic Sampling -->
-    <div class="pub">
-      <div class="pub-img"><img src="images/p7.png" alt="Neural Plenoptic Sampling" loading="lazy"></div>
-      <div class="pub-body">
-        <h3>Neural Plenoptic Sampling: Learning Light-field from Thousands of Imaginary Eyes</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, Yujiao Shi, and Hongdong Li</div>
-        <div class="venue">ACCV 2022</div>
-        <div class="pub-links">
-          <a href="https://openaccess.thecvf.com/content/ACCV2022/papers/Li_Neural_Plenoptic_Sampling_Learning_Light-field_from_Thousands_of_Imaginary_Eyes_ACCV_2022_paper.pdf" target="_blank" rel="noopener">Paper</a>
-        </div>
-        <div class="pub-desc">A neural plenoptic function representation with proxy depth and color-blending, achieving higher PSNR and over 10x faster training/testing than prior methods.</div>
-      </div>
-    </div>
-
-    <!-- 360 Panoramic -->
-    <div class="pub">
-      <div class="pub-img"><img src="images/p8.jpg" alt="360 Panoramic Stereo" loading="lazy"></div>
-      <div class="pub-body">
-        <h3>Lighting, Reflectance and Geometry Estimation from 360&deg; Panoramic Stereo</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, Hongdong Li, and Yasuyuki Matsushita</div>
-        <div class="venue">CVPR 2021</div>
-        <div class="pub-links">
-          <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Li_Lighting_Reflectance_and_Geometry_Estimation_From_360deg_Panoramic_Stereo_CVPR_2021_paper.pdf" target="_blank" rel="noopener">Paper</a>
-          <a href="https://github.com/junxuan-li/LRG_360Panoramic" target="_blank" rel="noopener">Code</a>
-        </div>
-        <div class="pub-desc">Joint estimation of spatially-varying lighting, reflectance, and geometry from 360&deg; stereo images, enabling AR applications such as mirror-object insertion.</div>
-      </div>
-    </div>
-
-    <!-- Learning to Minify -->
-    <div class="pub">
-      <div class="pub-img"><img src="images/p9-1.png" alt="Learning to Minify PS" loading="lazy"></div>
-      <div class="pub-body">
-        <h3>Learning to Minify Photometric Stereo</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, Antonio Robles-Kelly, Shaodi You, and Yasuyuki Matsushita</div>
-        <div class="venue">CVPR 2019</div>
-        <div class="pub-links">
-          <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Learning_to_Minify_Photometric_Stereo_CVPR_2019_paper.pdf" target="_blank" rel="noopener">Paper</a>
-          <a href="https://github.com/junxuan-li/Learning-to-Minify-Photometric-Stereo" target="_blank" rel="noopener">Code</a>
-        </div>
-        <div class="pub-desc">Dramatically decrease the demands on photometric stereo by reducing the number of images at input. Automatically learns the critical and informative illuminations required.</div>
-      </div>
-    </div>
-
-    <!-- Frequency Domain NN -->
-    <div class="pub">
-      <div class="pub-img"><img src="images/p10.png" alt="Frequency Domain SR" loading="lazy"></div>
-      <div class="pub-body">
-        <h3>A Frequency Domain Neural Network for Fast Image Super-resolution</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, Shaodi You, and Antonio Robles-Kelly</div>
-        <div class="venue">IJCNN 2018 <span class="oral">Oral Presentation</span></div>
-        <div class="pub-links">
-          <a href="https://arxiv.org/abs/1712.03037" target="_blank" rel="noopener">arXiv</a>
-          <a href="https://github.com/junxuan-li/A-frequency-domain-neural-network-for-fast-image-super-resolution" target="_blank" rel="noopener">Code</a>
-        </div>
-        <div class="pub-desc">A frequency domain neural network for image super-resolution that leverages the convolution theorem, achieving one to two orders of magnitude speedup over prior methods.</div>
-      </div>
-    </div>
-
-    <!-- Stereo SR -->
-    <div class="pub">
-      <div class="pub-img"><img src="images/p11.png" alt="Stereo SR" loading="lazy"></div>
-      <div class="pub-body">
-        <h3>Stereo Super-resolution via a Deep Convolutional Network</h3>
-        <div class="authors"><strong>Junxuan Li</strong>, Shaodi You, and Antonio Robles-Kelly</div>
-        <div class="venue">DICTA 2017</div>
-        <div class="pub-links">
-          <a href="https://junxuan-li.github.io/assets/Stereo_Super_resolution_via_a_Deep_ConvolutionalNetwork.pdf" target="_blank" rel="noopener">Paper</a>
-        </div>
-        <div class="pub-desc">A deep stereo super-resolution network that efficiently combines structural information across large regions via residual learning.</div>
-      </div>
-    </div>
-
-  </section>
-
-</main>
+  </div>
+</div>
 
 <footer class="footer">
   &copy; 2024 Junxuan Li
 </footer>
 
 <script>
-  document.querySelectorAll('section h2, .pub, .exp-card, .about-card, .news-list li').forEach(el => {
+  document.querySelectorAll('section h2, .pub, .exp-card, .about-text, .news-list li').forEach(el => {
     el.classList.add('reveal');
   });
 
-  // Lazy-load: move src to data-src so nothing loads until scrolled into view
+  // Lazy-load videos
   document.querySelectorAll('.pub-img video').forEach(video => {
     video.dataset.src = video.getAttribute('src');
     video.removeAttribute('src');
@@ -860,6 +964,22 @@
   }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Active nav link highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.navbar nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 100;
+      if (scrollY >= top) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
 </script>
 
 </body>
