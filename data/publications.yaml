@@ -4,7 +4,7 @@ pubs:
       - url: "images/publications/lca.gif"
         name:
     title: "Large-scale Codec Avatars: The Unreasonable Effectiveness of Large-scale Avatar Pretraining"
-    authors: "**Junxuan Li**, Rawal Khirodkar, Chengan He, Zhongshi Jiang, Giljoo Nam, Lingchen Yang, Jihyun Lee, Egor Zakharov, Zhaoen Su, Rinat Abdrashitov, Yuan Dong, Julieta Martinez, Kai Li, Qingyang Tan, Takaaki Shiratori, Matthew Hu, Peihong Guo, Xuhua Huang, Ariyan Zarei, Marco Pesavento, Yichen Xu, He Wen, Teng Deng, Wyatt Borsos, Anjali Thakrar, Jean-Charles Bazin, Carsten Stoll, Ginés Hidalgo, James Booth, Lucy Wang, Xiaowen Ma, Yu Rong, Sairanjith Thalanki, Chen Cao, Christian Häne, Abhishek Kar, Sofien Bouaziz, Jason Saragih, Yaser Sheikh, Shunsuke Saito"
+    authors: "**Junxuan Li**, Rawal Khirodkar, et al."
     journal: "CVPR 2026"
     journal_desc: ""
     links:
@@ -13,7 +13,7 @@ pubs:
       - name: Paper
         url: "https://arxiv.org/abs/2604.02320"
     desc: |
-      We present LCA, a high-fidelity, full-body 3D avatar model that generalizes to world-scale populations in a feedforward manner. By pretraining on 1M in-the-wild videos and post-training on high-quality multi-view studio data, LCA generalizes across hair styles, clothing, and demographics with precise facial expressions and finger-level articulation, while exhibiting emergent capabilities such as relightability and zero-shot robustness to stylized imagery.
+      LCA is a high-fidelity, full-body 3D avatar model that generalizes to world-scale populations via large-scale pre/post-training, achieving precise expressions, finger-level articulation, and emergent relightability.
 
 
 
@@ -35,7 +35,7 @@ pubs:
 
 
   - images:
-      - url: "images/publications/rfbgca.png"
+      - url: "images/publications/rfgca.gif"
         name:
     title: "Relightable Full-body Gaussian Codec Avatars"
     authors: "Shaofei Wang, Tomas Simon, Igor Santesteban, Timur Bagautdinov, **Junxuan Li**, Vasu Agrawal, Fabian Prada, Shoou-I Yu, Pace Nalbone, Matt Gramlich, Roman Lubachersky, Chenglei Wu, Javier Romero, Jason Saragih, Michael Zollhoefer, Andreas Geiger, Siyu Tang, Shunsuke Saito"
@@ -86,6 +86,8 @@ pubs:
 
 
   - images:
+      - url: "images/publications/lucas.gif"
+        name:
     title: "LUCAS: Layered Universal Codec Avatars"
     authors: "Di Liu, Teng Deng, Giljoo Nam, Yu Rong, Stanislav Pidhorskyi, **Junxuan Li**, Jason Saragih, Dimitris N. Metaxas, Chen Cao"
     journal: "CVPR 2025"
@@ -167,11 +169,7 @@ pubs:
       - name: arXiv
         url: "https://arxiv.org/abs/2302.04868"
     desc: |
-      We propose a 3D compositional morphable model of eyeglasses that accurately incorporates high-fidelity geometric and photometric interaction effects.
-
-      We employ a hybrid representation that combines surface geometry and a volumetric representation to enable modification of geometry, lens insertion and frame deformation.
-
-      Our model is relightable under point lights and natural illumination, which can synthesize casting shadows between faces and glasses
+      A 3D compositional morphable model of eyeglasses with a hybrid surface-volumetric representation, enabling geometry modification, lens insertion, frame deformation, and relightable rendering with realistic face-glasses shadow interactions.
 
 
 
@@ -187,11 +185,7 @@ pubs:
       - name: arXiv
         url: "https://arxiv.org/abs/2303.14190"
     desc: |
-      We propose a practical photometric solution for the in-the-wild inverse rendering under unknown ambient lighting.
-
-      We recovers scene geometry and reflectance using only multi-view images captured by a smartphone.
-
-      The key idea is to exploit smartphone's built-in flashlight as a minimally controlled light source, and decompose images into two photometric components: a static appearance corresponds to ambient flux, plus a dynamic reflection induced by the flashlight.
+      A practical in-the-wild inverse rendering method that recovers scene geometry and reflectance from smartphone images by exploiting the built-in flashlight as a minimally controlled light source.
 
 
 
@@ -211,17 +205,13 @@ pubs:
       - name: arXiv
         url: "https://arxiv.org/abs/2207.07815"
     desc: |
-      Introduced a self-supervised neural network for uncalibrated photometric stereo problem.
-
-      The object surface shape, and light sources are jointly estimated via the neural network in an unsupervised manner
+      A self-supervised neural network for uncalibrated photometric stereo that jointly estimates surface shape and light sources without supervision.
 
 
 
 
   - images:
       - url: "images/publications/p6-1.gif"
-        name:
-      - url: "images/publications/p6-2.png"
         name:
     title: "Neural Reflectance for Shape Recovery with Shadow Handling"
     authors: "**Junxuan Li**, and Hongdong Li"
@@ -232,11 +222,7 @@ pubs:
       - name: arXiv
         url: "https://arxiv.org/abs/2203.12909"
     desc: |
-      Formulated the shape estimation and material estimation in a self-supervised framework.  Explicitly predicted shadows to mitigate the errors.
-
-      Achieved the state-of-the-art performance in surface normal estimation and been an order of magnitude faster than previous methods.
-
-      The proposed neural representation of reflectance also presents higher quality in object relighting task than prior works.
+      Self-supervised shape and material estimation with explicit shadow prediction, achieving state-of-the-art surface normal accuracy an order of magnitude faster than prior methods.
 
 
 
@@ -250,11 +236,7 @@ pubs:
       - name: arXiv
         url: "https://openaccess.thecvf.com/content/ACCV2022/papers/Li_Neural_Plenoptic_Sampling_Learning_Light-field_from_Thousands_of_Imaginary_Eyes_ACCV_2022_paper.pdf"
     desc: |
-      Proposed a neural representation for the plenoptic function, which describes light rays observed from any given position in every viewing direction.
-
-      Proposed proxy depth reconstruction and color-blending network for achieving well approximation on the complete plenoptic function.
-
-      The generated results are in high-quality with better PSNR than previous methods. The training and testing time of proposed method is also more than 10 times faster than prior works.
+      A neural plenoptic function representation with proxy depth and color-blending, achieving higher PSNR and over 10x faster training/testing than prior methods.
 
 
 
@@ -271,6 +253,7 @@ pubs:
       - name: Code
         url: "https://github.com/junxuan-li/LRG_360Panoramic"
     desc: |
+      Joint estimation of spatially-varying lighting, reflectance, and geometry from 360° stereo images, enabling AR applications such as mirror-object insertion.
 
 
 
@@ -308,11 +291,7 @@ pubs:
       - name: Code
         url: "https://github.com/junxuan-li/A-frequency-domain-neural-network-for-fast-image-super-resolution"
     desc: |
-      A frequency domain neural network for image super-resolution.
-
-      Employs the convolution theorem so as to cast convolutions in the spatial domain as products in the frequency domain.
-
-      The network is very computationally efficient at testing, which is one to two orders of magnitude faster than the previous works.
+      A frequency domain neural network for image super-resolution that leverages the convolution theorem, achieving one to two orders of magnitude speedup over prior methods.
 
 
 
@@ -327,6 +306,4 @@ pubs:
       - name: arXiv
         url: "https://junxuan-li.github.io/assets/Stereo_Super_resolution_via_a_Deep_ConvolutionalNetwork.pdf"
     desc: |
-      A deep network for images super-resolution with stereo images at input. The network is designed to allow combining structural information in the image across large regions efficiently.
-
-      By learning the residual image, the network copes better with vanishing gradients and its devoid of gradient clipping operations.
+      A deep stereo super-resolution network that efficiently combines structural information across large regions via residual learning.

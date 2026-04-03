@@ -65,8 +65,6 @@ title:
 
 ---
 
-I'm a Research Scientist at [Codec Avatars Lab, Meta](https://about.meta.com/realitylabs/codecavatars/). I received Ph.D. degree in [Australian National University](https://en.wikipedia.org/wiki/Australian_National_University), supervised by [Hongdong Li](http://users.cecs.anu.edu.au/~hongdong/) and [Yasuyuki Matsushita](http://www-infobiz.ist.osaka-u.ac.jp/en/member/matsushita/). I received B. Eng degree in [Shanghai Jiaotong University](https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University).
+I'm a Research Scientist at [Codec Avatars Lab, Meta](https://about.meta.com/realitylabs/codecavatars/) in Pittsburgh, working on building the next generation of photorealistic digital humans. My work spans the full stack — foundational avatar models, relighting, hair, faces, hands, full-body, eyeglasses, and more! I'm working toward a future where anyone can create a photorealistic digital twin of themselves from a casual phone capture — with realistic lighting, expressions, and full-body articulation.
 
-My research is focused on reconstructing photorealistic humans in 3D, creating next generation digital avatars.
-
-If you are interested in interning at Meta with me, please send an email with your resume and research interests.
+If you are interested in an internship with us, feel free to email or DM me!

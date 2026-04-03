@@ -1,3 +1,8 @@
 CLAUDE.md
 .DS_Store
 static/images/publications/*.mp4
+.hugo_build.lock
+public/
+resources/
+assets/jsconfig.json
+go.sum

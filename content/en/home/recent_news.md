@@ -21,16 +21,16 @@ design:
   columns: '2'
 ---
 
-- One paper is accepted by CVPR 2026.
+- 🎉 <span style="background:#e63946;color:white;padding:1px 6px;border-radius:3px;font-size:0.8em;font-weight:bold;">NEW</span> One paper accepted at **CVPR 2026** — [LCA: Large-scale Codec Avatars](https://junxuan-li.github.io/lca/)!
 
-- One paper (Oral) is accepted by ICCV 2025.
+- One paper accepted at **ICCV 2025** as **Oral presentation**!
 
-- Two papers are accepted by SIGGRAPH 2025.
+- Two papers accepted at **SIGGRAPH 2025**!
 
-- Three papers are accepted by CVPR 2025.
+- Three papers accepted at **CVPR 2025** — [Vid2Avatar-Pro](https://moygcc.github.io/vid2avatar-pro/)!
 
-- One paper is accepted by SIGGRAPH Asia 2024.
+- One paper accepted at **SIGGRAPH Asia 2024** — [URAvatar](https://junxuan-li.github.io/urgca-website/)!
 
-- One paper is accepted by CVPR 2024.
+- One paper accepted at **CVPR 2024** as **Oral presentation**!
 
-- Two papers are accepted by CVPR 2023.
+- Two papers accepted at **CVPR 2023**!
