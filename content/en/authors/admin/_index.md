@@ -67,4 +67,4 @@ title:
 
 I'm a Research Scientist at [Codec Avatars Lab, Meta](https://about.meta.com/realitylabs/codecavatars/) in Pittsburgh, working on building the next generation of photorealistic digital humans. My work spans the full stack — foundational avatar models, relighting, hair, faces, hands, full-body, eyeglasses, and more! I'm working toward a future where anyone can create a photorealistic digital twin of themselves from a casual phone capture — with realistic lighting, expressions, and full-body articulation.
 
-If you are interested in an internship with us, feel free to email or DM me!
+If you are interested in an internship with us, feel free to email me!
