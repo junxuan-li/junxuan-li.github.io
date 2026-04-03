@@ -1,6 +1,25 @@
 pubs:
 
   - images:
+      - url: "images/publications/lca.gif"
+        name:
+    title: "Large-scale Codec Avatars: The Unreasonable Effectiveness of Large-scale Avatar Pretraining"
+    authors: "**Junxuan Li**, Rawal Khirodkar, Chengan He, Zhongshi Jiang, Giljoo Nam, Lingchen Yang, Jihyun Lee, Egor Zakharov, Zhaoen Su, Rinat Abdrashitov, Yuan Dong, Julieta Martinez, Kai Li, Qingyang Tan, Takaaki Shiratori, Matthew Hu, Peihong Guo, Xuhua Huang, Ariyan Zarei, Marco Pesavento, Yichen Xu, He Wen, Teng Deng, Wyatt Borsos, Anjali Thakrar, Jean-Charles Bazin, Carsten Stoll, Ginés Hidalgo, James Booth, Lucy Wang, Xiaowen Ma, Yu Rong, Sairanjith Thalanki, Chen Cao, Christian Häne, Abhishek Kar, Sofien Bouaziz, Jason Saragih, Yaser Sheikh, Shunsuke Saito"
+    journal: "CVPR 2026"
+    journal_desc: ""
+    links:
+      - name: Project Page
+        url: "https://junxuan-li.github.io/lca/"
+      - name: Paper
+        url: "https://arxiv.org/abs/2604.02320"
+    desc: |
+      We present LCA, a high-fidelity, full-body 3D avatar model that generalizes to world-scale populations in a feedforward manner. By pretraining on 1M in-the-wild videos and post-training on high-quality multi-view studio data, LCA generalizes across hair styles, clothing, and demographics with precise facial expressions and finger-level articulation, while exhibiting emergent capabilities such as relightability and zero-shot robustness to stylized imagery.
+
+
+
+  - images:
+      - url: "images/publications/haircup.gif"
+        name:
     title: "HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars"
     authors: "Byungjun Kim, Shunsuke Saito, Giljoo Nam, Tomas Simon, Jason Saragih, Hanbyul Joo, **Junxuan Li**"
     journal: ""
@@ -16,6 +35,8 @@ pubs:
 
 
   - images:
+      - url: "images/publications/rfbgca.png"
+        name:
     title: "Relightable Full-body Gaussian Codec Avatars"
     authors: "Shaofei Wang, Tomas Simon, Igor Santesteban, Timur Bagautdinov, **Junxuan Li**, Vasu Agrawal, Fabian Prada, Shoou-I Yu, Pace Nalbone, Matt Gramlich, Roman Lubachersky, Chenglei Wu, Javier Romero, Jason Saragih, Michael Zollhoefer, Andreas Geiger, Siyu Tang, Shunsuke Saito"
     journal: ""
@@ -31,6 +52,8 @@ pubs:
 
 
   - images:
+      - url: "images/publications/3dgh.png"
+        name:
     title: "3DGH: 3D Head Generation with Composable Hair and Face"
     authors: "Chengan He, **Junxuan Li**, Tobias Kirschstein, Artem Sevastopolsky, Shunsuke Saito, Qingyang Tan, Javier Romero, Chen Cao, Holly Rushmeier, Giljoo Nam"
     journal: ""
@@ -46,6 +69,8 @@ pubs:
 
 
   - images:
+      - url: "images/publications/fresa.gif"
+        name:
     title: "FRESA: Feedforward Reconstruction of Personalized Skinned Avatars from Few Images"
     authors: "Rong Wang, Fabian Prada, Ziyan Wang, Zhongshi Jiang, Chengxiang Yin, **Junxuan Li**, Shunsuke Saito, Igor Santesteban, Javier Romero, Rohan Joshi, Hongdong Li, Jason Saragih, Yaser Sheikh"
     journal: "CVPR 2025"
@@ -77,6 +102,8 @@ pubs:
 
 
   - images:
+      - url: "images/publications/vid2avatarpro.gif"
+        name:
     title: "Vid2Avatar-Pro: Authentic Avatar from Videos in the Wild via Universal Prior"
     authors: "Chen Guo*, **Junxuan Li***, Yash Kant, Yaser Sheikh, Shunsuke Saito†, Chen Cao† (*† - equal contribution)"
     journal: "CVPR 2025"

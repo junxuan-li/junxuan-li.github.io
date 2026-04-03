@@ -21,6 +21,8 @@ design:
   columns: '2'
 ---
 
+- One paper is accepted by CVPR 2026.
+
 - One paper (Oral) is accepted by ICCV 2025.
 
 - Two papers are accepted by SIGGRAPH 2025.
